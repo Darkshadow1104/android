@@ -1,6 +1,6 @@
 # android
 1) Name of Application: Food Detection
-2) Name of devloper: Nitesh N Narwade (MTech Student at IIITD).
+2) Name of developer: Nitesh N Narwade (MTech Student at IIITD).
 3) Name of Guide: Dr. Ganesh Bagler (Associates professor at department of Computational Biology, IIITD).
 4) Name of Lab: Cosylab (Complex System Lab)
 
