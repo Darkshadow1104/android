@@ -1,8 +1,8 @@
 # android
-Name of Application: Food Detection
-Name of devloper: Nitesh N Narwade (MTech Student at IIITD).
-Name of Guide: Dr. Ganesh Bagler (Associates professor at department of Computational Biology, IIITD).
-Name of Lab: Cosylab (Complex System Lab)
+1) Name of Application: Food Detection
+2) Name of devloper: Nitesh N Narwade (MTech Student at IIITD).
+3) Name of Guide: Dr. Ganesh Bagler (Associates professor at department of Computational Biology, IIITD).
+4) Name of Lab: Cosylab (Complex System Lab)
 
 
 1) There is assets folder under the main molder.
