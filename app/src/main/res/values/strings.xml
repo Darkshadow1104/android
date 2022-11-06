@@ -1,4 +1,15 @@
 <resources>
     <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">Food Detection</string>
     <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="col1">Dish</string>
+    <string name="col2">Fat</string>
+    <string name="col5">Energy</string>
+    <string name="col3">Carboydrates</string>
+    <string name="col4">Protien</string>
+    <string name="row1name">Indian Bread</string>
+    <string name="row1fat">2.5</string>
+    <string name="row1protien">3.5</string>
+    <string name="row1carbohydrates">4.5</string>
+    <string name="row1energy">5.5</string>
+
 </resources>

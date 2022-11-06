@@ -458,6 +458,7 @@ public class YoloV5ClassifierDetect implements Classifier {
                                             Math.min(bitmap.getHeight() - 1, yPos + h / 2));
                             detections.add(new Recognition("" + offset, labels.get(detectedClass),
                                     confidenceInClass, rect, detectedClass));
+
                         }
                     }
                 }

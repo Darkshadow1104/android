@@ -10,4 +10,6 @@
     <color name="selection_highlight">#aaaaaa</color>
     <color name="selection_focus">#eeaa55</color>
     <color name="item_normal">#eeeeee</color>
+    <color name="colorGreen">#198A7F</color>
+    <color name="white">#F6F8F8</color>
 </resources>

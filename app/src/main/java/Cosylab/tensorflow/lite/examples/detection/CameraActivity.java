@@ -98,7 +98,7 @@ public abstract class CameraActivity extends AppCompatActivity
   //private ImageView plusImageView, minusImageView;
   protected ListView deviceView;
   protected TextView threadsTextView;
-  protected ListView modelView;
+  protected TextView modelView;
   /** Current indices of device and model. */
   int currentDevice = -1;
   int currentModel = -1;
@@ -127,46 +127,46 @@ public abstract class CameraActivity extends AppCompatActivity
     currentNumThreads = Integer.parseInt(threadsTextView.getText().toString().trim());*/
     /*plusImageView = findViewById(R.id.plus);
     minusImageView = findViewById(R.id.minus);*/
-    deviceView = findViewById(R.id.device_list);
+    //deviceView = findViewById(R.id.device_list);
     deviceStrings.add("Wts file");
     /*deviceStrings.add("GPU");
     deviceStrings.add("NNAPI");*/
-    deviceView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+    //deviceView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
     ArrayAdapter<String> deviceAdapter =
             new ArrayAdapter<>(
                     CameraActivity.this , R.layout.deviceview_row, R.id.deviceview_row_text, deviceStrings);
-    deviceView.setAdapter(deviceAdapter);
-    deviceView.setItemChecked(defaultDeviceIndex, true);
+   //deviceView.setAdapter(deviceAdapter);
+    //deviceView.setItemChecked(defaultDeviceIndex, true);
     currentDevice = defaultDeviceIndex;
-    deviceView.setOnItemClickListener(
+    /*deviceView.setOnItemClickListener(
             new AdapterView.OnItemClickListener() {
               @Override
               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 updateActiveModel();
               }
-            });
+            });*/
 
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
     gestureLayout = findViewById(R.id.gesture_layout);
     sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
     bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
-    modelView = findViewById((R.id.model_list));
+    //modelView = findViewById((R.id.model_list));
 
     modelStrings = getModelStrings(getAssets(), ASSET_PATH);
-    modelView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+    //modelView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
     ArrayAdapter<String> modelAdapter =
             new ArrayAdapter<>(
                     CameraActivity.this , R.layout.listview_row, R.id.listview_row_text, modelStrings);
-    modelView.setAdapter(modelAdapter);
-    modelView.setItemChecked(defaultModelIndex, true);
+    //modelView.setAdapter(modelAdapter);
+    //modelView.setItemChecked(defaultModelIndex, true);
     currentModel = defaultModelIndex;
-    modelView.setOnItemClickListener(
+    /*modelView.setOnItemClickListener(
             new AdapterView.OnItemClickListener() {
               @Override
               public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 updateActiveModel();
               }
-            });
+            });*/
 
     ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
     vto.addOnGlobalLayoutListener(
@@ -215,9 +215,9 @@ public abstract class CameraActivity extends AppCompatActivity
           public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
         });
 
-    frameValueTextView = findViewById(R.id.frame_info);
+    /*frameValueTextView = findViewById(R.id.frame_info);
     cropValueTextView = findViewById(R.id.crop_info);
-    inferenceTimeTextView = findViewById(R.id.inference_info);
+    inferenceTimeTextView = findViewById(R.id.inference_info);*/
 
     //plusImageView.setOnClickListener(this);
     //minusImageView.setOnClickListener(this);
@@ -579,14 +579,14 @@ public abstract class CameraActivity extends AppCompatActivity
 
   @Override
   public void onClick(View v) {
-    if (v.getId() == R.id.plus) {
+    if (v.getId() == 0) {
       String threads = threadsTextView.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
       if (numThreads >= 9) return;
       numThreads++;
       threadsTextView.setText(String.valueOf(numThreads));
       setNumThreads(numThreads);
-    } else if (v.getId() == R.id.minus) {
+    } else if (v.getId() == 0) {
       String threads = threadsTextView.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
       if (numThreads == 1) {
@@ -599,11 +599,11 @@ public abstract class CameraActivity extends AppCompatActivity
   }
 
   protected void showFrameInfo(String frameInfo) {
-    frameValueTextView.setText(frameInfo);
+   // frameValueTextView.setText(frameInfo);
   }
 
   protected void showCropInfo(String cropInfo) {
-    cropValueTextView.setText(cropInfo);
+    //cropValueTextView.setText(cropInfo);
   }
 
   protected void showInference(String inferenceTime) {

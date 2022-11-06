@@ -95,7 +95,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
         tracker = new MultiBoxTracker(this);
 
-        final int modelIndex = modelView.getCheckedItemPosition();
+        final int modelIndex = 0;
+        //modelView.getCheckedItemPosition();
         final String modelString = modelStrings.get(modelIndex);
 
         try {
@@ -148,7 +149,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
     protected void updateActiveModel() {
         // Get UI information before delegating to background
-        final int modelIndex = modelView.getCheckedItemPosition();
+      final int modelIndex = 0;
+      //modelView.getCheckedItemPosition();
         final int deviceIndex = deviceView.getCheckedItemPosition();
         String threads = threadsTextView.getText().toString().trim();
         final int numThreads = Integer.parseInt(threads);
@@ -279,6 +281,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
                                 result.setLocation(location);
                                 mappedRecognitions.add(result);
+
                             }
                         }
 

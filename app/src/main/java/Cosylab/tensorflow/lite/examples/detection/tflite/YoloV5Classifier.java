@@ -80,7 +80,7 @@ public class YoloV5Classifier implements Classifier {
         BufferedReader br = new BufferedReader(new InputStreamReader(labelsInput));
         String line;
         while ((line = br.readLine()) != null) {
-            LOGGER.w(line);
+            LOGGER.w(line + "Nitesh");
             d.labels.add(line);
         }
         br.close();
