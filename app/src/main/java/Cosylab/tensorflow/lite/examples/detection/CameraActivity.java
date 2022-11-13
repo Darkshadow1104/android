@@ -99,6 +99,7 @@ public abstract class CameraActivity extends AppCompatActivity
   protected ListView deviceView;
   protected TextView threadsTextView;
   protected TextView modelView;
+  //private LinearLayout resulttv;
   /** Current indices of device and model. */
   int currentDevice = -1;
   int currentModel = -1;
@@ -119,6 +120,8 @@ public abstract class CameraActivity extends AppCompatActivity
 
     if (hasPermission()) {
       setFragment();
+      //resulttv = (LinearLayout) findViewById(R.id.bottom_sheet_layout);
+
     } else {
       requestPermission();
     }
@@ -195,18 +198,18 @@ public abstract class CameraActivity extends AppCompatActivity
                 break;
               case BottomSheetBehavior.STATE_EXPANDED:
                 {
-                  bottomSheetArrowImageView.setImageResource(R.drawable.icn_chevron_down);
+                  bottomSheetArrowImageView.setImageResource(R.drawable.chevron_down);
                 }
                 break;
               case BottomSheetBehavior.STATE_COLLAPSED:
                 {
-                  bottomSheetArrowImageView.setImageResource(R.drawable.icn_chevron_up);
+                  bottomSheetArrowImageView.setImageResource(R.drawable.chevron_up);
                 }
                 break;
               case BottomSheetBehavior.STATE_DRAGGING:
                 break;
               case BottomSheetBehavior.STATE_SETTLING:
-                bottomSheetArrowImageView.setImageResource(R.drawable.icn_chevron_up);
+                bottomSheetArrowImageView.setImageResource(R.drawable.chevron_up);
                 break;
             }
           }

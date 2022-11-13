@@ -254,6 +254,10 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                         lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
 
                         Log.e("CHECK", "run: " + results.size());
+                        if(results.size()!=0){
+                            Log.e("CHECK", "Nitesh_Answer: " + results.get(0));
+                        }
+                       // Log.e("CHECK", "Nitesh_Answer: " + results.get(0));
 
                         cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
                         final Canvas canvas = new Canvas(cropCopyBitmap);
