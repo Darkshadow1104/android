@@ -34,6 +34,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -81,6 +82,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     private MultiBoxTracker tracker;
 
     private BorderedText borderedText;
+    //private TextView resulttv;
     /*private int currentNumThreads = 0;
     private TextView threadsTextView;*/
 
@@ -254,9 +256,12 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                         lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
 
                         Log.e("CHECK", "run: " + results.size());
-                        if(results.size()!=0){
+                        /*if(results.size()!=0){
                             Log.e("CHECK", "Nitesh_Answer: " + results.get(0));
-                        }
+                            //stored_ans.add((CharSequence) results.get(0));
+                            CharSequence x = (CharSequence) results.get(0);
+                            resulttv.setText((char) x.charAt(0));
+                        }*/
                        // Log.e("CHECK", "Nitesh_Answer: " + results.get(0));
 
                         cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
@@ -303,8 +308,58 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                         showInference(lastProcessingTimeMs + "ms");
                                     }
                                 });
+                        runOnUiThread(
+                                new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if(results.size()!=0){
+                                            Log.e("CHECK", "Nitesh_Answer: " + results.get(0));
+
+                                            //stored_ans.add((CharSequence) results.get(0));
+                                            if(results.size()==1){
+                                                String x = (String) results.get(0).toString();
+                                                int i = 4;
+                                                while(x.charAt(i)!=' ' || x.charAt(i + 1)!='('){
+                                                    i++;
+
+                                                }
+                                                String y = (String) x.substring(4, i);
+                                                //String two_char = x.substring(1,3);
+                                                resulttv.setText((String) y);
+                                            }
+                                            else if(results.size()==2){
+                                                //String[] two_obj= new String[results.size()];
+                                                TextView[] two_obj = new TextView[results.size()];
+                                                two_obj[0] = resulttv;
+                                                two_obj[1] = resulttv2;
+                                                for(int j = 0; j<results.size(); j++){
+                                                    String x = (String) results.get(j).toString();
+                                                    int i = 4;
+                                                    while(x.charAt(i)!=' ' || x.charAt(i + 1)!='('){
+                                                        i++;
+
+                                                    }
+                                                    String y = (String) x.substring(4, i);
+                                                    //String two_char = x.substring(1,3);
+                                                    two_obj[j].setText((String) y);
+
+                                                }
+
+                                            }
+
+
+                                }
+                                    }
+                                }
+                        );
+
+
+
                     }
-                });
+
+                }
+                );
+
     }
 
     @Override

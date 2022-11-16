@@ -99,7 +99,9 @@ public abstract class CameraActivity extends AppCompatActivity
   protected ListView deviceView;
   protected TextView threadsTextView;
   protected TextView modelView;
-  //private LinearLayout resulttv;
+  protected TextView resulttv;
+  protected TextView resulttv2;
+  //protected ArrayList<CharSequence> stored_ans = new ArrayList<CharSequence>();
   /** Current indices of device and model. */
   int currentDevice = -1;
   int currentModel = -1;
@@ -148,7 +150,8 @@ public abstract class CameraActivity extends AppCompatActivity
                 updateActiveModel();
               }
             });*/
-
+    resulttv = (TextView) findViewById(R.id.textview1);
+    resulttv2 = (TextView) findViewById(R.id.textview2);
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
     gestureLayout = findViewById(R.id.gesture_layout);
     sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
@@ -302,6 +305,7 @@ public abstract class CameraActivity extends AppCompatActivity
           }
         };
     processImage();
+
   }
 
   /** Callback for Camera2 API */
@@ -360,6 +364,7 @@ public abstract class CameraActivity extends AppCompatActivity
           };
 
       processImage();
+
     } catch (final Exception e) {
       LOGGER.e(e, "Exception!");
       Trace.endSection();
@@ -625,4 +630,7 @@ public abstract class CameraActivity extends AppCompatActivity
   protected abstract void setNumThreads(int numThreads);
 
   protected abstract void setUseNNAPI(boolean isChecked);
+
+
+
 }
