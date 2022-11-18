@@ -1,0 +1,202 @@
+{
+    "Indian bread": {
+        "Recipe_id": "63943",
+        "Recipe_title": "Roti ( Indian Bread )",
+        "Trained_Dish": "indianbread",
+        "Dish": "Indian bread",
+        "Carbohydrate, by difference (g)": "55.3456",
+        "Energy (kcal)": "1292.62",
+        "Protein (g)": "18.5243",
+        "Total lipid (fat) (g)": "117.9331"
+    },
+    "Rasgulla": {
+        "Recipe_id": "4155",
+        "Recipe_title": "Rasgullas",
+        "Trained_Dish": "rasgulla",
+        "Dish": "Rasgulla",
+        "Carbohydrate, by difference (g)": "575.0692",
+        "Energy (kcal)": "2845.6038",
+        "Protein (g)": "46.5218",
+        "Total lipid (fat) (g)": "48.0386"
+    },
+    "Biryani": {
+        "Recipe_id": "67186",
+        "Recipe_title": "Biryani",
+        "Trained_Dish": "biryani",
+        "Dish": "Biryani",
+        "Carbohydrate, by difference (g)": "74.3688",
+        "Energy (kcal)": "1254.09",
+        "Protein (g)": "20.2032",
+        "Total lipid (fat) (g)": "102.1588"
+    },
+    "Uttapam": {
+        "Recipe_id": "68350",
+        "Recipe_title": "Flat Rice Bread from Southern India: Uttapam",
+        "Trained_Dish": "uttapam",
+        "Dish": "Uttapam",
+        "Carbohydrate, by difference (g)": "100.3401",
+        "Energy (kcal)": "1133.847",
+        "Protein (g)": "24.8658",
+        "Total lipid (fat) (g)": "78.4866"
+    },
+    "Paneer": {
+        "Recipe_id": "4596",
+        "Recipe_title": "Paneer",
+        "Trained_Dish": "paneer",
+        "Dish": "Paneer",
+        "Carbohydrate, by difference (g)": "186.6112",
+        "Energy (kcal)": "4308.56",
+        "Protein (g)": "122.976",
+        "Total lipid (fat) (g)": "345.6608"
+    },
+    "Poha": {
+        "Recipe_id": "69014",
+        "Recipe_title": "Poha",
+        "Trained_Dish": "poha",
+        "Dish": "Poha",
+        "Carbohydrate, by difference (g)": "21219.4843",
+        "Energy (kcal)": "102319",
+        "Protein (g)": "2094.2168",
+        "Total lipid (fat) (g)": "914.3123"
+    },
+    "Khichdi": {
+        "Recipe_id": "67417",
+        "Recipe_title": "Khichdi",
+        "Trained_Dish": "khichdi",
+        "Dish": "Khichdi",
+        "Carbohydrate, by difference (g)": "15.2376",
+        "Energy (kcal)": "65.84",
+        "Protein (g)": "1.9304",
+        "Total lipid (fat) (g)": "0.2016"
+    },
+    "Omelette": {
+        "Recipe_id": "72286",
+        "Recipe_title": "Egg Omelette",
+        "Trained_Dish": "omelette",
+        "Dish": "Omelette",
+        "Carbohydrate, by difference (g)": "10.8713",
+        "Energy (kcal)": "412.096",
+        "Protein (g)": "14.2451",
+        "Total lipid (fat) (g)": "35.2393"
+    },
+    "Plain rice": {
+        "Recipe_id": "53485",
+        "Recipe_title": "Plain Rice --  Make Ahead OAMC Throw It in the Freezer!!",
+        "Trained_Dish": "plainrice",
+        "Dish": "Plain rice",
+        "Carbohydrate, by difference (g)": "423.1875",
+        "Energy (kcal)": "2036.85",
+        "Protein (g)": "41.847",
+        "Total lipid (fat) (g)": "17.76"
+    },
+    "Dal makhani": {
+        "Recipe_id": "72194",
+        "Recipe_title": "Dal Makhani",
+        "Trained_Dish": "dalmakhani",
+        "Dish": "Dal makhani",
+        "Carbohydrate, by difference (g)": "40.9368",
+        "Energy (kcal)": "274.96",
+        "Protein (g)": "12.6452",
+        "Total lipid (fat) (g)": "8.7097"
+    },
+    "Rajma": {
+        "Recipe_id": "66062",
+        "Recipe_title": "Rajma (Indian Red Kidney Bean Curry)",
+        "Trained_Dish": "rajma",
+        "Dish": "Rajma",
+        "Carbohydrate, by difference (g)": "339.9654",
+        "Energy (kcal)": "1948.3337",
+        "Protein (g)": "136.0903",
+        "Total lipid (fat) (g)": "11.139"
+    },
+    "Poori": {
+        "Recipe_id": "72397",
+        "Recipe_title": "Poori",
+        "Trained_Dish": "poori",
+        "Dish": "Poori",
+        "Carbohydrate, by difference (g)": "43.182",
+        "Energy (kcal)": "260.064",
+        "Protein (g)": "7.9439",
+        "Total lipid (fat) (g)": "7.8667"
+    },
+    "Chole": {
+        "Recipe_id": "64892",
+        "Recipe_title": "Chole Masala",
+        "Trained_Dish": "chole",
+        "Dish": "Chole",
+        "Carbohydrate, by difference (g)": "181.8791",
+        "Energy (kcal)": "1348.031",
+        "Protein (g)": "52.3082",
+        "Total lipid (fat) (g)": "53.3953"
+    },
+    "Dal": {
+        "Recipe_id": "68769",
+        "Recipe_title": "Dal",
+        "Trained_Dish": "dal",
+        "Dish": "Dal",
+        "Carbohydrate, by difference (g)": "123.7203",
+        "Energy (kcal)": "594.4435",
+        "Protein (g)": "44.6226",
+        "Total lipid (fat) (g)": "4.5177"
+    },
+    "Sambhar": {
+        "Recipe_id": "66070",
+        "Recipe_title": "Sambhar",
+        "Trained_Dish": "sambhar",
+        "Dish": "Sambhar",
+        "Carbohydrate, by difference (g)": "21.2503",
+        "Energy (kcal)": "335.1333",
+        "Protein (g)": "48.8644",
+        "Total lipid (fat) (g)": "6.272"
+    },
+    "Papad": {
+        "Recipe_id": "67065",
+        "Recipe_title": "Udad Dal Papads",
+        "Trained_Dish": "papad",
+        "Dish": "Papad",
+        "Carbohydrate, by difference (g)": "63.7672",
+        "Energy (kcal)": "741.5895",
+        "Protein (g)": "5.0309",
+        "Total lipid (fat) (g)": "52.2894"
+    },
+    "Gulab jamun": {
+        "Recipe_id": "68764",
+        "Recipe_title": "Gulab Jamun",
+        "Trained_Dish": "gulabjamun",
+        "Dish": "Gulab jamun",
+        "Carbohydrate, by difference (g)": "81529.6494",
+        "Energy (kcal)": "334072.555",
+        "Protein (g)": "585.2818",
+        "Total lipid (fat) (g)": "648.6035"
+    },
+    "Idli": {
+        "Recipe_id": "67237",
+        "Recipe_title": "Idli",
+        "Trained_Dish": "idli",
+        "Dish": "Idli",
+        "Carbohydrate, by difference (g)": "423.1875",
+        "Energy (kcal)": "2036.85",
+        "Protein (g)": "41.847",
+        "Total lipid (fat) (g)": "17.76"
+    },
+    "Vada": {
+        "Recipe_id": "63773",
+        "Recipe_title": "Vada (Rice flour puri)",
+        "Trained_Dish": "vada",
+        "Dish": "Vada",
+        "Carbohydrate, by difference (g)": "170.7772",
+        "Energy (kcal)": "787.644",
+        "Protein (g)": "17.5497",
+        "Total lipid (fat) (g)": "4.0635"
+    },
+    "Dosa": {
+        "Recipe_id": "66922",
+        "Recipe_title": "Dosas (Indian Rice and Lentil Pancakes)",
+        "Trained_Dish": "dosa",
+        "Dish": "Dosa",
+        "Carbohydrate, by difference (g)": "110.1684",
+        "Energy (kcal)": "4213.3713",
+        "Protein (g)": "39.846",
+        "Total lipid (fat) (g)": "432.9493"
+    }
+}

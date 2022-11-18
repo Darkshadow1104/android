@@ -27,12 +27,11 @@
             android:src="@drawable/chevron_up" />
 
     </LinearLayout>
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
+
         <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@android:color/white"
             android:layout_margin="5dp">
 
@@ -40,9 +39,9 @@
                 android:background="@color/colorGreen">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
+                    android:layout_weight="2"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/col1"
@@ -96,12 +95,22 @@
                 </TextView>
 
             </TableRow>
+        </TableLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:id = "@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:layout_margin="5dp"
+            >
             <TableRow>
                 <TextView
                     android:id="@+id/textview1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -109,6 +118,7 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/calorie_textview1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
@@ -119,6 +129,7 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/protien_textview1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
@@ -129,6 +140,7 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/fat_textview1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
@@ -139,6 +151,7 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/carbohydrates_textview1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
@@ -155,7 +168,1089 @@
                     android:id = "@+id/textview2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/calorie_textview8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id = "@+id/textview20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1name"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/calorie_textview20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1fat"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/protien_textview20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1carbohydrates"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fat_textview20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1protien"
+                    android:textSize="12sp">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/carbohydrates_textview20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="@string/row1energy"
+                    android:textSize="12sp">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -208,7 +1303,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -261,7 +1355,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -314,7 +1407,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -367,7 +1459,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -420,7 +1511,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -473,7 +1563,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -526,7 +1615,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -579,7 +1667,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -632,7 +1719,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
                     android:gravity="center_horizontal"
                     android:padding="10sp"
                     android:text="@string/row1name"
@@ -681,1014 +1767,8 @@
                 </TextView>
 
             </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
 
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
+         </TableLayout>
 
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1name"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1fat"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1carbohydrates"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1protien"
-                    android:textSize="12sp">
-
-                </TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10sp"
-                    android:text="@string/row1energy"
-                    android:textSize="12sp">
-
-                </TextView>
-
-            </TableRow>
-
-        </TableLayout>
     </ScrollView>
 </LinearLayout>
