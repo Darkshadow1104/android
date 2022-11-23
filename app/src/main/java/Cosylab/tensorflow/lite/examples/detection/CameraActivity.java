@@ -42,12 +42,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.service.controls.actions.FloatAction;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -58,6 +62,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -75,6 +80,7 @@ import org.tensorflow.lite.examples.detection.R;
 import Cosylab.tensorflow.lite.examples.detection.env.ImageUtils;
 import Cosylab.tensorflow.lite.examples.detection.env.Logger;
 import Cosylab.tensorflow.lite.examples.detection.tflite.Classifier;
+import Cosylab.tensorflow.lite.examples.detection.tracking.DataAdapter;
 
 public abstract class CameraActivity extends AppCompatActivity
     implements OnImageAvailableListener,
@@ -84,7 +90,8 @@ public abstract class CameraActivity extends AppCompatActivity
   private static final Logger LOGGER = new Logger();
 
   private static final int PERMISSIONS_REQUEST = 1;
-
+  protected RecyclerView recyclerView;
+  protected DataAdapter dataAdapter;
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
   private static final String ASSET_PATH = "";
   protected int previewWidth = 0;
@@ -113,7 +120,7 @@ public abstract class CameraActivity extends AppCompatActivity
   protected ListView deviceView;
   protected TextView threadsTextView;
   protected TextView modelView;
-  protected TextView resulttv;
+  /*protected TextView resulttv;
   protected TextView resulttv2;
   protected TextView resulttv3;
   protected TextView resulttv4;
@@ -212,10 +219,13 @@ public abstract class CameraActivity extends AppCompatActivity
   protected TextView carbohydrates17;
   protected TextView carbohydrates18;
   protected TextView carbohydrates19;
-  protected TextView carbohydrates20;
-  protected ImageButton button;
+  protected TextView carbohydrates20;*/
+  protected Button button;
   protected TableLayout table;
   //protected TextView resulttv2;
+  protected FloatingActionButton floatingActionButton, floatingActionButton2;
+  protected Animation fabOpen, fabClose, rotateForward, rotateBackward;
+  protected boolean isOpen = false;
   protected boolean table_flag = false;
   protected String[] stored_ans = new String[20];
   HashMap<String, double[]> map = new HashMap<>();
@@ -301,7 +311,8 @@ public abstract class CameraActivity extends AppCompatActivity
     setSupportActionBar(toolbar);
     getSupportActionBar().setDisplayShowTitleEnabled(false);
     //Take permission for the storage of the screen short.
-    verifyStoragePermission(this);
+    //verifyStoragePermission(this);
+
     map.put("Indian bread", Data_base[0]);
     map.put("Rasgulla", Data_base[1]);
     map.put("Biryani", Data_base[2]);
@@ -326,11 +337,16 @@ public abstract class CameraActivity extends AppCompatActivity
 
     if (hasPermission()) {
       setFragment();
+     /* ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+              Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);*/
       //resulttv = (LinearLayout) findViewById(R.id.bottom_sheet_layout);
 
     } else {
       requestPermission();
     }
+
+   /* ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE}, 100);*/
 
     /*threadsTextView = findViewById(R.id.threads);
     currentNumThreads = Integer.parseInt(threadsTextView.getText().toString().trim());*/
@@ -354,7 +370,11 @@ public abstract class CameraActivity extends AppCompatActivity
                 updateActiveModel();
               }
             });*/
-    table = (TableLayout) findViewById(R.id.table);
+
+
+
+
+    /*table = (TableLayout) findViewById(R.id.table);
     resulttv = (TextView) findViewById(R.id.textview1);
     resulttv2 = (TextView) findViewById(R.id.textview2);
     resulttv3 = (TextView) findViewById(R.id.textview3);
@@ -458,7 +478,7 @@ public abstract class CameraActivity extends AppCompatActivity
     carbohydrates17 = (TextView) findViewById(R.id.carbohydrates_textview17);
     carbohydrates18 = (TextView) findViewById(R.id.carbohydrates_textview18);
     carbohydrates19 = (TextView) findViewById(R.id.carbohydrates_textview19);
-    carbohydrates20 = (TextView) findViewById(R.id.carbohydrates_textview20);
+    carbohydrates20 = (TextView) findViewById(R.id.carbohydrates_textview20);*/
 
 
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
@@ -466,7 +486,46 @@ public abstract class CameraActivity extends AppCompatActivity
     sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
     bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
     //modelView = findViewById((R.id.model_list));
+    /*floatingActionButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        //Toast.makeText(CameraActivity.this, "clicked", Toast.LENGTH_SHORT).show();
+        if(isOpen){
+          floatingActionButton.startAnimation(rotateForward);
+          floatingActionButton2.startAnimation(fabClose);
+          floatingActionButton2.setClickable(false);
+          isOpen = false;
+        }
+        else{
+          floatingActionButton.startAnimation(rotateBackward);
+          floatingActionButton2.startAnimation(fabOpen);
+          floatingActionButton2.setClickable(true);
+          isOpen = true;
 
+        }
+        Toast.makeText(CameraActivity.this, "clicked", Toast.LENGTH_SHORT).show();
+      }
+    });
+
+    floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if(isOpen){
+          floatingActionButton.startAnimation(rotateForward);
+          floatingActionButton2.startAnimation(fabClose);
+          floatingActionButton2.setClickable(false);
+          isOpen = false;
+        }
+        else{
+          floatingActionButton.startAnimation(rotateBackward);
+          floatingActionButton2.startAnimation(fabOpen);
+          floatingActionButton2.setClickable(true);
+          isOpen = true;
+
+        }
+        Toast.makeText(CameraActivity.this, "Edit_text clicked", Toast.LENGTH_SHORT).show();
+      }
+    });*/
     modelStrings = getModelStrings(getAssets(), ASSET_PATH);
     //modelView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
     ArrayAdapter<String> modelAdapter =
@@ -510,18 +569,18 @@ public abstract class CameraActivity extends AppCompatActivity
                 break;
               case BottomSheetBehavior.STATE_EXPANDED:
                 {
-                  bottomSheetArrowImageView.setImageResource(R.drawable.chevron_down);
+                  bottomSheetArrowImageView.setImageResource(R.drawable.arrow_down);
                 }
                 break;
               case BottomSheetBehavior.STATE_COLLAPSED:
                 {
-                  bottomSheetArrowImageView.setImageResource(R.drawable.chevron_up);
+                  bottomSheetArrowImageView.setImageResource(R.drawable.arrow_up);
                 }
                 break;
               case BottomSheetBehavior.STATE_DRAGGING:
                 break;
               case BottomSheetBehavior.STATE_SETTLING:
-                bottomSheetArrowImageView.setImageResource(R.drawable.chevron_up);
+                bottomSheetArrowImageView.setImageResource(R.drawable.arrow_up);
                 break;
             }
           }
@@ -546,7 +605,7 @@ public abstract class CameraActivity extends AppCompatActivity
   }
 
 
-  protected static File takeScreenShot(Bitmap view, String filename){
+  /*protected static File takeScreenShot(View view, String filename){
     Date date = new Date();
     CharSequence format  = DateFormat.getTimeInstance().format(date);
     //.format()
@@ -560,9 +619,9 @@ public abstract class CameraActivity extends AppCompatActivity
 
       String path = dirPath+"/"+filename+"-"+format+".jpeg";
 
-      //view.;
-      Bitmap bitmap1 = view;
-      //view.setDrawingCacheEnabled(false);
+      view.setDrawingCacheEnabled(true);
+      Bitmap bitmap1 = Bitmap.createBitmap(view.getDrawingCache());
+              //
 
 
       File imageFile = new File(path);
@@ -595,7 +654,7 @@ public abstract class CameraActivity extends AppCompatActivity
     if(permission!=PackageManager.PERMISSION_GRANTED){
              ActivityCompat.requestPermissions(activity, PERMISSION_STORAGE, REQUEST_EXTERNAL_STORAGE);
     }
-  }
+  }*/
 
   protected ArrayList<String> getModelStrings(AssetManager mgr, String path){
     ArrayList<String> res = new ArrayList<String>();
@@ -813,7 +872,10 @@ public abstract class CameraActivity extends AppCompatActivity
 
   private boolean hasPermission() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
       return checkSelfPermission(PERMISSION_CAMERA) == PackageManager.PERMISSION_GRANTED;
+
+
     } else {
       return true;
     }
@@ -884,6 +946,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
     Fragment fragment;
     if (useCamera2API) {
+
       CameraConnectionFragment camera2Fragment =
           CameraConnectionFragment.newInstance(
               new CameraConnectionFragment.ConnectionCallback() {

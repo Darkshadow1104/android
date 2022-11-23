@@ -1,0 +1,68 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Cosylab.tensorflow.lite.examples.detection.Fragment2">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreen"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="248dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="32dp"
+            android:text="Enter your height"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.821" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="248dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="364dp"
+            android:text="Enter your weight"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="98dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="196dp"
+            android:layout_marginEnd="28dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="in cm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="98dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="365dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="in kg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

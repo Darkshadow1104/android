@@ -16,6 +16,9 @@
 
 package Cosylab.tensorflow.lite.examples.detection;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -27,18 +30,29 @@ import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.SystemClock;
 import android.util.Log;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -55,13 +69,18 @@ import Cosylab.tensorflow.lite.examples.detection.env.Logger;
 import Cosylab.tensorflow.lite.examples.detection.tflite.Classifier;
 import Cosylab.tensorflow.lite.examples.detection.tflite.DetectorFactory;
 import Cosylab.tensorflow.lite.examples.detection.tflite.YoloV5Classifier;
+import Cosylab.tensorflow.lite.examples.detection.tracking.DataAdapter;
 import Cosylab.tensorflow.lite.examples.detection.tracking.MultiBoxTracker;
+import de.codecrafters.tableview.TableView;
+import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
+import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 
 /**
  * An activity that uses a TensorFlowMultiBoxDetector and ObjectTracker to detect and then track
  * objects.
  */
 public class DetectorActivity extends CameraActivity implements OnImageAvailableListener {
+
     private static final Logger LOGGER = new Logger();
 
     private static final DetectorMode MODE = DetectorMode.TF_OD_API;
@@ -256,8 +275,11 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
         }
         //final List<Classifier.Recognition> results = detector.recognizeImage(croppedBitmap);
 
+
+
         runInBackground(
                 new Runnable() {
+
 
                     @Override
                     public void run() {
@@ -363,9 +385,11 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
                                             }
                                             */
-
+                                           // TableView tableview = findViewById(R.id.table_data_view);
                                                 //String[] two_obj= new String[results.size()];
-                                                TextView[] two_obj = new TextView[20];
+
+                                                recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+                                               /* TextView[] two_obj = new TextView[20];
                                                 two_obj[0] = resulttv;
                                                 two_obj[1] = resulttv2;
                                                 two_obj[2] = resulttv3;
@@ -472,7 +496,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                             carbohydrates_obj[16] = carbohydrates17;
                                             carbohydrates_obj[17] = carbohydrates18;
                                             carbohydrates_obj[18] = carbohydrates19;
-                                            carbohydrates_obj[19] = carbohydrates20;
+                                            carbohydrates_obj[19] = carbohydrates20;*/
 
                                             Map<String, Integer> object = new HashMap<>();
                                             object.put("Indian bread", 0);
@@ -495,8 +519,15 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                             object.put("Idli", 0);
                                             object.put("Vada", 0);
                                             object.put("Dosa", 0);
+                                            String[][] data = new String[20][5];
+                                            /*String[] headers = {"Dish", "Calories (Kcal)", "Protein (g)", "Fat (g)", "Carbohydrates (g)"};
+                                            String[][] data = new String[20][5];
+                                            tableview.setHeaderAdapter(new SimpleTableHeaderAdapter(DetectorActivity.this, headers));
+                                            tableview.setHeaderBackgroundColor(Color.parseColor("#2ecc71"));
+                                            tableview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                                            tableview.setPivotX(10);*/
 
-                                                button = (ImageButton) findViewById(R.id.button);
+                                                button = (Button) findViewById(R.id.button);
                                                 button.setOnClickListener(new View.OnClickListener() {
                                                     @Override
                                                     public void onClick(View view) {
@@ -536,20 +567,75 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                             /*System.out.println(set.getKey() + " = "
                                                                     + set.getValue());*/
                                                             if(set.getValue()!=0){
-                                                                two_obj[l].setText((String) set.getKey() + " x" + (String) set.getValue().toString());
-                                                                //float f=Float.parseFloat(map.get(set.getKey())[0]);
-                                                                calorie_obj[l].setText(String.format("%.2f", map.get(set.getKey())[0]* set.getValue()));
-                                                                protien_obj[l].setText(String.format("%.2f", map.get(set.getKey())[1]* set.getValue()));
-                                                                fat_obj[l].setText(String.format("%.2f", map.get(set.getKey())[2]* set.getValue()));
-                                                                carbohydrates_obj[l].setText(String.format("%.2f", map.get(set.getKey())[3]* set.getValue()));
+                                                                //two_obj[l].setText((String) set.getKey() + " x" + (String) set.getValue().toString());
+                                                                data[l][0] = (String) set.getKey() + " x" + (String) set.getValue().toString();
+
+                                                              //calorie_obj[l].setText(String.format("%.2f", map.get(set.getKey())[0]* set.getValue()));
+                                                                data[l][1] = String.format("%.2f", map.get(set.getKey())[0]* set.getValue());
+                                                               // protien_obj[l].setText(String.format("%.2f", map.get(set.getKey())[1]* set.getValue()));
+                                                                data[l][2] = String.format("%.2f", map.get(set.getKey())[1]* set.getValue());
+                                                              // fat_obj[l].setText(String.format("%.2f", map.get(set.getKey())[2]* set.getValue()));
+                                                                data[l][3] = String.format("%.2f", map.get(set.getKey())[2]* set.getValue());
+                                                              // carbohydrates_obj[l].setText(String.format("%.2f", map.get(set.getKey())[3]* set.getValue()));
+                                                                data[l][4] = String.format("%.2f", map.get(set.getKey())[3]* set.getValue());
                                                                 l++;
                                                                 object.put(set.getKey(), 0);
+
 
                                                             }
 
 
+                                                            //tableview.setDataAdapter(new SimpleTableDataAdapter(DetectorActivity.this, Newdata));
+
 
                                                         }
+                                                        String[][] Newdata = new String[l][5];
+                                                        for(int i  = 0; i<l; i++){
+                                                            for(int j = 0; j<5; j++){
+                                                                Newdata[i][j] = data[i][j];
+                                                            }
+                                                        }
+
+                                                        /*
+                                                        * Here In the Below code We are creating the recyclerview
+                                                        * Which is usefull to show the answer of table in the table view.
+                                                        * Two classes has been created for it 1st one is DataModel and 2nd one is DataAdapter.
+                                                        *
+                                                        * */
+
+                                                        recyclerView.setHasFixedSize(true);
+                                                        recyclerView.setLayoutManager(new LinearLayoutManager(DetectorActivity.this));
+                                                        List<DataModel> dataModelList = new ArrayList<>();
+                                                        int Number_of_columns = 5;
+                                                        int Number_of_rows = l;
+                                                        for(int i = 0; i<Number_of_rows; i++){
+                                                            String[] dataarray = new String[Number_of_columns];
+                                                            for(int j = 0; j<Number_of_columns; j++){
+                                                                dataarray[j] = Newdata[i][j];
+                                                            }
+                                                            DataModel mydatamodel = new DataModel(dataarray);
+                                                            dataModelList.add(mydatamodel);
+                                                        }
+                                                        dataAdapter = new DataAdapter(DetectorActivity.this, dataModelList);
+                                                        recyclerView.setAdapter(dataAdapter);
+
+                                                        /*
+                                                        * Here in the below code we are taking the screenshort.
+                                                        * The screenshort function is build inside the fragment.
+                                                        * If you want to see how the function works please see the fragment name as "Cameraconnection Fragment"
+                                                        *
+                                                        * */
+
+                                                        CameraConnectionFragment fragment = (CameraConnectionFragment) getFragmentManager().findFragmentById(R.id.container);
+                                                        fragment.takescreenshort(view);
+                                                        //fragment.setRecycleerView(Newdata, l);
+                                                        //fragment.takescreenshort(view);
+                                                        //fragment.takescreenshort(view);
+                                                        /*CameraConnectionFragment fragment = (CameraConnectionFragment) getFragmentManager().findFragmentById(R.id.container);
+                                                        fragment.takePicture();*/
+
+                                                       /* takeScreenShot(getWindow().getDecorView().getRootView(), "result");*/
+
                                                         /*table.setColumnCollapsed(0, table_flag);
                                                         table.setColumnCollapsed(1, table_flag);
                                                         table.setColumnCollapsed(2, table_flag);
@@ -563,7 +649,24 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                             table_flag = true;
                                                         }*/
 
+                                                        /*ActivityCompat.requestPermissions(DetectorActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                                                Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
 
+                                                        View view1 = getWindow().getDecorView().getRootView();
+                                                        Bitmap bitmap = Bitmap.createBitmap(view1.getWidth(), view1.getHeight(), Config.ARGB_8888);
+                                                        Canvas canvas = new Canvas(bitmap);
+                                                        view1.draw(canvas);
+
+                                                        File fileScreenshot = new File(DetectorActivity.this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), Calendar.getInstance().getTime().toString() + ".jpeg");
+                                                        FileOutputStream fileOutputStream = null;
+                                                        try{
+                                                            fileOutputStream = new FileOutputStream(fileScreenshot);
+                                                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+                                                            fileOutputStream.flush();
+                                                            fileOutputStream.close();
+                                                        } catch (Exception e) {
+                                                            e.printStackTrace();
+                                                        }*/
 
 
                                                     }
@@ -572,19 +675,20 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
                                 }
 
+
                                     }
+
 
 
                                 }
                         );
 
 
+
                     }
 
                 }
                 );
-
-
 
 
     }

@@ -24,9 +24,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/chevron_up" />
+            android:src="@drawable/arrow_up" />
 
     </LinearLayout>
+         <!--<de.codecrafters.tableview.TableView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id = "@+id/table_data_view"
+             android:backgroundTint="@color/colorGreen"
+             android:scrollbars="vertical"
+             app:tableView_columnCount="5"
+             app:tableView_headerElevation="10">
+
+         </de.codecrafters.tableview.TableView>-->
 
 
         <TableLayout
@@ -96,7 +106,14 @@
 
             </TableRow>
         </TableLayout>
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id = "@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center">
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <!--<ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TableLayout
@@ -1770,5 +1787,5 @@
 
          </TableLayout>
 
-    </ScrollView>
+    </ScrollView>-->
 </LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TableRow
+        android:background="@color/white">
+
+        <TextView
+            android:id ="@+id/item_dish"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:background="@color/white"
+            android:padding="10sp"
+            android:textSize="14sp">
+
+        </TextView>
+        <TextView
+            android:id = "@+id/item_calories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:padding="10sp"
+            android:background="@color/white"
+            android:textSize="14sp">
+
+        </TextView>
+        <TextView
+            android:id = "@+id/item_protien"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:padding="10sp"
+            android:background="@color/white"
+            android:textSize="14sp">
+
+        </TextView>
+        <TextView
+            android:id = "@+id/item_fat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:padding="10sp"
+            android:background="@color/white"
+            android:textSize="14sp">
+
+        </TextView>
+        <TextView
+            android:id = "@+id/item_carboydrates"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:padding="10sp"
+            android:background="@color/white"
+            android:textSize="14sp">
+
+        </TextView>
+
+    </TableRow>
+</TableLayout>

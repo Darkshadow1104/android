@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="tfe_color_primary">#0099FF</color>
-    <color name="tfe_color_primary_dark">#ff6f00</color>
+    <color name="tfe_color_primary_dark">#19BEAE</color>
     <color name="tfe_color_accent">#425066</color>
 
     <color name="tfe_semi_transparent">#66000000</color>
@@ -10,6 +10,6 @@
     <color name="selection_highlight">#aaaaaa</color>
     <color name="selection_focus">#eeaa55</color>
     <color name="item_normal">#eeeeee</color>
-    <color name="colorGreen">#198A7F</color>
+    <color name="colorGreen">#19BEAE</color>
     <color name="white">#F6F8F8</color>
 </resources>
