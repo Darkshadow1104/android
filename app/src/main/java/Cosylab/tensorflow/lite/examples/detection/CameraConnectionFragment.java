@@ -30,6 +30,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -370,6 +371,9 @@ public class CameraConnectionFragment extends Fragment {
           //FragmentTransaction fm = getFragmentManager().beginTransaction();
           FragmentTransaction fm = getChildFragmentManager().beginTransaction();
             fm.replace(R.id.constraintLayout,secondfreg).commit();*/
+          Intent intent = new Intent(getActivity(), TakingInputFromUser.class);
+          intent.putExtra("Some_value", "1");
+          startActivity(intent);
         }
         else{
           floatingActionButton.startAnimation(rotateBackward);
