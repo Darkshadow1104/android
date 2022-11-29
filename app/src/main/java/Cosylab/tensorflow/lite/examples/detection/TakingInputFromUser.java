@@ -146,6 +146,7 @@ public class TakingInputFromUser extends AppCompatActivity {
                     Log.d("Nitesh Calories", String.valueOf(mycalorie));
                     //progressText.setText(String.valueOf(mycalorie));
                     //final Handler handler = new Handler();
+                    //Here we need to code.
 
                 }
 
