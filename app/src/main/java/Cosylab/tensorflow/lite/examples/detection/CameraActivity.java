@@ -58,6 +58,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -90,6 +91,9 @@ public abstract class CameraActivity extends AppCompatActivity
   private static final Logger LOGGER = new Logger();
 
   private static final int PERMISSIONS_REQUEST = 1;
+  protected int currentprogress = 0;
+  protected TextView progress_percentage;
+  protected ProgressBar progressBar;
   protected RecyclerView recyclerView;
   protected DataAdapter dataAdapter;
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
@@ -120,106 +124,6 @@ public abstract class CameraActivity extends AppCompatActivity
   protected ListView deviceView;
   protected TextView threadsTextView;
   protected TextView modelView;
-  /*protected TextView resulttv;
-  protected TextView resulttv2;
-  protected TextView resulttv3;
-  protected TextView resulttv4;
-  protected TextView resulttv5;
-  protected TextView resulttv6;
-  protected TextView resulttv7;
-  protected TextView resulttv8;
-  protected TextView resulttv9;
-  protected TextView resulttv10;
-  protected TextView resulttv11;
-  protected TextView resulttv12;
-  protected TextView resulttv13;
-  protected TextView resulttv14;
-  protected TextView resulttv15;
-  protected TextView resulttv16;
-  protected TextView resulttv17;
-  protected TextView resulttv18;
-  protected TextView resulttv19;
-  protected TextView resulttv20;
-  protected TextView calorie1;
-  protected TextView calorie2;
-  protected TextView calorie3;
-  protected TextView calorie4;
-  protected TextView calorie5;
-  protected TextView calorie6;
-  protected TextView calorie7;
-  protected TextView calorie8;
-  protected TextView calorie9;
-  protected TextView calorie10;
-  protected TextView calorie11;
-  protected TextView calorie12;
-  protected TextView calorie13;
-  protected TextView calorie14;
-  protected TextView calorie15;
-  protected TextView calorie16;
-  protected TextView calorie17;
-  protected TextView calorie18;
-  protected TextView calorie19;
-  protected TextView calorie20;
-  protected TextView protien1;
-  protected TextView protien2;
-  protected TextView protien3;
-  protected TextView protien4;
-  protected TextView protien5;
-  protected TextView protien6;
-  protected TextView protien7;
-  protected TextView protien8;
-  protected TextView protien9;
-  protected TextView protien10;
-  protected TextView protien11;
-  protected TextView protien12;
-  protected TextView protien13;
-  protected TextView protien14;
-  protected TextView protien15;
-  protected TextView protien16;
-  protected TextView protien17;
-  protected TextView protien18;
-  protected TextView protien19;
-  protected TextView protien20;
-  protected TextView fat1;
-  protected TextView fat2;
-  protected TextView fat3;
-  protected TextView fat4;
-  protected TextView fat5;
-  protected TextView fat6;
-  protected TextView fat7;
-  protected TextView fat8;
-  protected TextView fat9;
-  protected TextView fat10;
-  protected TextView fat11;
-  protected TextView fat12;
-  protected TextView fat13;
-  protected TextView fat14;
-  protected TextView fat15;
-  protected TextView fat16;
-  protected TextView fat17;
-  protected TextView fat18;
-  protected TextView fat19;
-  protected TextView fat20;
-  protected TextView carbohydrates1;
-  protected TextView carbohydrates2;
-  protected TextView carbohydrates3;
-  protected TextView carbohydrates4;
-  protected TextView carbohydrates5;
-  protected TextView carbohydrates6;
-  protected TextView carbohydrates7;
-  protected TextView carbohydrates8;
-  protected TextView carbohydrates9;
-  protected TextView carbohydrates10;
-  protected TextView carbohydrates11;
-  protected TextView carbohydrates12;
-  protected TextView carbohydrates13;
-  protected TextView carbohydrates14;
-  protected TextView carbohydrates15;
-  protected TextView carbohydrates16;
-  protected TextView carbohydrates17;
-  protected TextView carbohydrates18;
-  protected TextView carbohydrates19;
-  protected TextView carbohydrates20;*/
   protected Button button;
   protected TableLayout table;
   //protected TextView resulttv2;
@@ -229,21 +133,24 @@ public abstract class CameraActivity extends AppCompatActivity
   protected boolean table_flag = false;
   protected String[] stored_ans = new String[20];
   HashMap<String, double[]> map = new HashMap<>();
-  double[][] Data_base = {{1292.62, 18.5243, 117.9331, 55.3456},
-          {2845.6038,	46.5218	, 48.0386,	575.0692},
-          {1254.09,	20.2032,	102.1588,	74.3688},
-          {1133.847,	24.8658,	78.4866,	100.3401
+  /*
+  * DATA IS TAKEN FROM "https://www.nutritionix.com/food/idli"
+  * */
+  double[][] Data_base = {{120,	3.1	,3.7,	18},
+          {120	,1.7,	1.8,	25},
+          {292	,20,	9.4	,31},
+          {160,	4,	5,	25
           },
-          {4308.56,	122.976,	345.6608,	186.6112
+          {365	,22,	29,	3.6
           },
-          {102319, 	2094.2168,	914.3123,	21219.4843
+          {158	,2.9,	0.2,	35
           },
-          {65.84,	1.9304,	0.2016,	15.2376
+          {238	,11,	3.4,	41
           },
-          {412.096,	14.2451,	35.2393,	10.8713
+          {323	,21,	25,	1.4
           },
           {
-                  2036.85,	41.847,	17.76,	423.1875
+                  205,	4.3,	0.4,	45
 
           },
           {
@@ -251,44 +158,44 @@ public abstract class CameraActivity extends AppCompatActivity
 
           },
           {
-                  1948.3337,	136.0903,	11.139,	339.9654
+                  252	,13	,6.5	,38
 
           },
           {
-                  260.064,	7.9439,	7.8667,	43.182
+                  141	,2.3	,9.8	,12
 
           },
           {
-                  1348.031,	52.3082,	53.3953,	181.8791
+                  281	,7.7	,16	,29
 
           },
           {
-                  594.4435,	44.6226,	4.5177,	123.7203
+                  222	,14	,4.2	,34
 
           },
           {
-                  335.1333,	48.8644,	6.272,	21.2503
+                  260	,14	,1.3	,53
 
           },
           {
-                  741.5895,	5.0309,	52.2894,	63.7672
+                  29	,1.3	,1.1	,3.4
 
           },
 
           {
-                  334072.555,	585.2818,	648.6035,	81529.6494
+                  149	,1.9	,7.3	,20
 
           },
           {
-                  2036.85,	41.847,	17.76,	423.1875
+                  58	,1.6	,0.4	,12
 
           },
           {
-                  787.644,	17.5497,	4.0635,	170.7772
+                  135	,4.4	,8.4	,11
 
           },
           {
-                  4213.3713,	39.846,	432.9493,	110.1684
+                  168	,3.9	,3.7	,29
 
           }
   };
@@ -337,10 +244,6 @@ public abstract class CameraActivity extends AppCompatActivity
 
     if (hasPermission()) {
       setFragment();
-     /* ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-              Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);*/
-      //resulttv = (LinearLayout) findViewById(R.id.bottom_sheet_layout);
-
     } else {
       requestPermission();
     }
@@ -370,116 +273,6 @@ public abstract class CameraActivity extends AppCompatActivity
                 updateActiveModel();
               }
             });*/
-
-
-
-
-    /*table = (TableLayout) findViewById(R.id.table);
-    resulttv = (TextView) findViewById(R.id.textview1);
-    resulttv2 = (TextView) findViewById(R.id.textview2);
-    resulttv3 = (TextView) findViewById(R.id.textview3);
-    resulttv4 = (TextView) findViewById(R.id.textview4);
-    resulttv5 = (TextView) findViewById(R.id.textview5);
-    resulttv6 = (TextView) findViewById(R.id.textview6);
-    resulttv7 = (TextView) findViewById(R.id.textview7);
-    resulttv8 = (TextView) findViewById(R.id.textview8);
-    resulttv9 = (TextView) findViewById(R.id.textview9);
-    resulttv10 = (TextView) findViewById(R.id.textview10);
-    resulttv11 = (TextView) findViewById(R.id.textview11);
-    resulttv12 = (TextView) findViewById(R.id.textview12);
-    resulttv13 = (TextView) findViewById(R.id.textview13);
-    resulttv14 = (TextView) findViewById(R.id.textview14);
-    resulttv15 = (TextView) findViewById(R.id.textview15);
-    resulttv16 = (TextView) findViewById(R.id.textview16);
-    resulttv17 = (TextView) findViewById(R.id.textview17);
-    resulttv18 = (TextView) findViewById(R.id.textview18);
-    resulttv19 = (TextView) findViewById(R.id.textview19);
-    resulttv20 = (TextView) findViewById(R.id.textview20);
-    ///////////////////////////////////////////////////
-    calorie1 = (TextView) findViewById(R.id.calorie_textview1);
-    calorie2 = (TextView) findViewById(R.id.calorie_textview2);
-    calorie3 = (TextView) findViewById(R.id.calorie_textview3);
-    calorie4 = (TextView) findViewById(R.id.calorie_textview4);
-    calorie5 = (TextView) findViewById(R.id.calorie_textview5);
-    calorie6 = (TextView) findViewById(R.id.calorie_textview6);
-    calorie7 = (TextView) findViewById(R.id.calorie_textview7);
-    calorie8 = (TextView) findViewById(R.id.calorie_textview8);
-    calorie9 = (TextView) findViewById(R.id.calorie_textview9);
-    calorie10 = (TextView) findViewById(R.id.calorie_textview10);
-    calorie11 = (TextView) findViewById(R.id.calorie_textview11);
-    calorie12 = (TextView) findViewById(R.id.calorie_textview12);
-    calorie13 = (TextView) findViewById(R.id.calorie_textview13);
-    calorie14 = (TextView) findViewById(R.id.calorie_textview14);
-    calorie15 = (TextView) findViewById(R.id.calorie_textview15);
-    calorie16 = (TextView) findViewById(R.id.calorie_textview16);
-    calorie17 = (TextView) findViewById(R.id.calorie_textview17);
-    calorie18 = (TextView) findViewById(R.id.calorie_textview18);
-    calorie19 = (TextView) findViewById(R.id.calorie_textview19);
-    calorie20 = (TextView) findViewById(R.id.calorie_textview20);
-    /////////////////////////////////////////////////////////////
-    protien1 = (TextView) findViewById(R.id.protien_textview1);
-    protien2 = (TextView) findViewById(R.id.protien_textview2);
-    protien3 = (TextView) findViewById(R.id.protien_textview3);
-    protien4 = (TextView) findViewById(R.id.protien_textview4);
-    protien5 = (TextView) findViewById(R.id.protien_textview5);
-    protien6 = (TextView) findViewById(R.id.protien_textview6);
-    protien7 = (TextView) findViewById(R.id.protien_textview7);
-    protien8 = (TextView) findViewById(R.id.protien_textview8);
-    protien9 = (TextView) findViewById(R.id.protien_textview9);
-    protien10 = (TextView) findViewById(R.id.protien_textview10);
-    protien11 = (TextView) findViewById(R.id.protien_textview11);
-    protien12 = (TextView) findViewById(R.id.protien_textview12);
-    protien13 = (TextView) findViewById(R.id.protien_textview13);
-    protien14 = (TextView) findViewById(R.id.protien_textview14);
-    protien15 = (TextView) findViewById(R.id.protien_textview15);
-    protien16 = (TextView) findViewById(R.id.protien_textview16);
-    protien17 = (TextView) findViewById(R.id.protien_textview17);
-    protien18 = (TextView) findViewById(R.id.protien_textview18);
-    protien19 = (TextView) findViewById(R.id.protien_textview19);
-    protien20 = (TextView) findViewById(R.id.protien_textview20);
-    /////////////////////////////////////////////////////////////
-    fat1 = (TextView) findViewById(R.id.fat_textview1);
-    fat2 = (TextView) findViewById(R.id.fat_textview2);
-    fat3 = (TextView) findViewById(R.id.fat_textview3);
-    fat4 = (TextView) findViewById(R.id.fat_textview4);
-    fat5 = (TextView) findViewById(R.id.fat_textview5);
-    fat6 = (TextView) findViewById(R.id.fat_textview6);
-    fat7 = (TextView) findViewById(R.id.fat_textview7);
-    fat8 = (TextView) findViewById(R.id.fat_textview8);
-    fat9 = (TextView) findViewById(R.id.fat_textview9);
-    fat10 = (TextView) findViewById(R.id.fat_textview10);
-    fat11 = (TextView) findViewById(R.id.fat_textview11);
-    fat12 = (TextView) findViewById(R.id.fat_textview12);
-    fat13 = (TextView) findViewById(R.id.fat_textview13);
-    fat14 = (TextView) findViewById(R.id.fat_textview14);
-    fat15 = (TextView) findViewById(R.id.fat_textview15);
-    fat16 = (TextView) findViewById(R.id.fat_textview16);
-    fat17 = (TextView) findViewById(R.id.fat_textview17);
-    fat18 = (TextView) findViewById(R.id.fat_textview18);
-    fat19 = (TextView) findViewById(R.id.fat_textview19);
-    fat20 = (TextView) findViewById(R.id.fat_textview20);
-    /////////////////////////////////////////////////////////////
-    carbohydrates1 = (TextView) findViewById(R.id.carbohydrates_textview1);
-    carbohydrates2 = (TextView) findViewById(R.id.carbohydrates_textview2);
-    carbohydrates3 = (TextView) findViewById(R.id.carbohydrates_textview3);
-    carbohydrates4 = (TextView) findViewById(R.id.carbohydrates_textview4);
-    carbohydrates5 = (TextView) findViewById(R.id.carbohydrates_textview5);
-    carbohydrates6 = (TextView) findViewById(R.id.carbohydrates_textview6);
-    carbohydrates7 = (TextView) findViewById(R.id.carbohydrates_textview7);
-    carbohydrates8 = (TextView) findViewById(R.id.carbohydrates_textview8);
-    carbohydrates9 = (TextView) findViewById(R.id.carbohydrates_textview9);
-    carbohydrates10 = (TextView) findViewById(R.id.carbohydrates_textview10);
-    carbohydrates11 = (TextView) findViewById(R.id.carbohydrates_textview11);
-    carbohydrates12 = (TextView) findViewById(R.id.carbohydrates_textview12);
-    carbohydrates13 = (TextView) findViewById(R.id.carbohydrates_textview13);
-    carbohydrates14 = (TextView) findViewById(R.id.carbohydrates_textview14);
-    carbohydrates15 = (TextView) findViewById(R.id.carbohydrates_textview15);
-    carbohydrates16 = (TextView) findViewById(R.id.carbohydrates_textview16);
-    carbohydrates17 = (TextView) findViewById(R.id.carbohydrates_textview17);
-    carbohydrates18 = (TextView) findViewById(R.id.carbohydrates_textview18);
-    carbohydrates19 = (TextView) findViewById(R.id.carbohydrates_textview19);
-    carbohydrates20 = (TextView) findViewById(R.id.carbohydrates_textview20);*/
-
 
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
     gestureLayout = findViewById(R.id.gesture_layout);
@@ -1016,7 +809,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
   @Override
   public void onClick(View v) {
-    if (v.getId() == 0) {
+    /*if (v.getId() == 0) {
       String threads = threadsTextView.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
       if (numThreads >= 9) return;
@@ -1032,7 +825,7 @@ public abstract class CameraActivity extends AppCompatActivity
       numThreads--;
       threadsTextView.setText(String.valueOf(numThreads));
       setNumThreads(numThreads);
-    }
+    }*/
   }
 
   protected void showFrameInfo(String frameInfo) {

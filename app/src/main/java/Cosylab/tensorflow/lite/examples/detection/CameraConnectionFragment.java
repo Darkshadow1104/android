@@ -71,6 +71,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -86,6 +88,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -107,6 +110,8 @@ public class CameraConnectionFragment extends Fragment {
   private static final Logger LOGGER = new Logger();
   protected RecyclerView recyclerView;
   protected DataAdapter dataAdapter;
+  protected ProgressBar progressBar;
+  protected TextView progress_percentage;
   /**
    * The camera preview size will be chosen to be the smallest frame by pixel size capable of
    * containing a DESIRED_SIZE x DESIRED_SIZE square.
@@ -386,6 +391,31 @@ public class CameraConnectionFragment extends Fragment {
         Toast.makeText(getActivity(), "Edit_text clicked", Toast.LENGTH_SHORT).show();
       }
     });
+    /*
+    *
+    *
+    * */
+    progressBar = view.findViewById(R.id.progrssbar);
+    progress_percentage = view.findViewById(R.id.textView4);
+    double total_calories_consume_till_now_in_one_daya_1 = 0;
+    try {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        total_calories_consume_till_now_in_one_daya_1 = new ReadWriteFromFile(LocalDateTime.now()).readfiles(getActivity());
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    Log.d("Total_calories", String.valueOf(total_calories_consume_till_now_in_one_daya_1));
+    progress_percentage.setText(String.valueOf(total_calories_consume_till_now_in_one_daya_1)+" Kcal");
+
+    double max_calories_per_day_1 = 0;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      max_calories_per_day_1 = new ReadWriteFromFile(LocalDateTime.now()).readmaximumcalories(getActivity());
+    }
+    Log.d(",Max_calorie_Capacity", String.valueOf(max_calories_per_day_1));
+    //  progressBar = findViewById(R.id.progress_bar);
+    progressBar.setMax((int) max_calories_per_day_1);
+    progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya_1);
     return view;
   }
 

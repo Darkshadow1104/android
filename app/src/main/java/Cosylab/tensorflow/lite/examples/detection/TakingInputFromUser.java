@@ -2,6 +2,8 @@ package Cosylab.tensorflow.lite.examples.detection;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -15,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.tensorflow.lite.examples.detection.R;
+
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class TakingInputFromUser extends AppCompatActivity {
 
@@ -41,7 +46,7 @@ public class TakingInputFromUser extends AppCompatActivity {
         HEIGHT = HEIGHT/100; //CONVERTED IN THE METER.
         //The formula for the BMI is BMI = weight (kg) / (height (m) )^2
         BMI_Index =  (Float) WEIGHT/(HEIGHT*HEIGHT);*/
-        progressText = (TextView) findViewById(R.id.percentage_increase);
+        //progressText = (TextView) findViewById(R.id.percentage_increase);
         height = (EditText) findViewById(R.id.textView9);
         weight = (EditText) findViewById(R.id.textView8);
         age = (EditText) findViewById(R.id.textView10);
@@ -142,11 +147,17 @@ public class TakingInputFromUser extends AppCompatActivity {
                      * If you are extra active (very hard exercise/sports & a physical job): calories = BMR × 1.9
                      * */
                     double mycalorie = Required_calories(main_BMR, activity_spinner);
-
+                      mycalorie = Double.parseDouble(String.format("%.2f", mycalorie));
                     Log.d("Nitesh Calories", String.valueOf(mycalorie));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        new ReadWriteFromFile(LocalDateTime.now()).writemaximumcalories(String.valueOf(mycalorie), TakingInputFromUser.this);
+                    }
                     //progressText.setText(String.valueOf(mycalorie));
                     //final Handler handler = new Handler();
                     //Here we need to code.
+                    /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        new RunningThread(LocalDateTime.now()).writeToFile(String.valueOf(mycalorie), TakingInputFromUser.this);
+                    }*/
 
                 }
 
@@ -186,19 +197,19 @@ public class TakingInputFromUser extends AppCompatActivity {
 
 
         double calories = 0;
-        if(my_activity.equals("Sedentary (little or no exercise)")){
+        if(my_activity.equals("No exercise")){
             calories = my_bmr * 1.2;
         }
-        else if(my_activity.equals("Lightly active (light exercise/sports 1-3 days/week)")){
+        else if(my_activity.equals("Lightly active")){
              calories = my_bmr * 1.375;
         }
-        else if(my_activity.equals("Moderately active (moderate exercise/sports 3-5 days/week)")){
+        else if(my_activity.equals("Moderately active")){
               calories = my_bmr * 1.55;
         }
-        else if(my_activity.equals("Very active (hard exercise/sports 6-7 days a week)")){
+        else if(my_activity.equals("Very active")){
              calories = my_bmr * 1.725;
         }
-        else if(my_activity.equals("If you are extra active (very hard exercise/sports & a physical job)")){
+        else if(my_activity.equals("Extra active")){
             calories = my_bmr * 1.9;
         }
         return calories;

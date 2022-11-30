@@ -29,6 +29,7 @@ import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.SystemClock;
@@ -51,6 +52,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -357,146 +359,9 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                 stored_ans[k] = (String) results.get(k).toString();
                                                 k++;
                                             }
-                                           /* //k = 0;
-                                           // Log.e("CHECK", "Stored_ans: " + );
-                                            //resulttv.setText((String) stored_ans[0].toString());*/
-
-                                            /*
-                                            if(results.size()==1){
-                                                String x = (String) results.get(0).toString();
-                                                int i = 4;
-                                                while(x.charAt(i)!=' ' || x.charAt(i + 1)!='('){
-                                                    i++;
-
-                                                }
-                                                String y = (String) x.substring(4, i);
-                                                //String two_char = x.substring(1,3);
-                                                button = (ImageButton) findViewById(R.id.button);
-                                                button.setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View view) {
-                                                        takeScreenShot(croppedBitmap, "result");
-                                                        //resulttv.setText("My_answer");
-                                                        resulttv.setText((String) y);
-
-                                                    }
-                                                });
-                                                //getResult(results.size(), results);
-
-                                            }
-                                            */
-                                           // TableView tableview = findViewById(R.id.table_data_view);
-                                                //String[] two_obj= new String[results.size()];
 
                                                 recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-                                               /* TextView[] two_obj = new TextView[20];
-                                                two_obj[0] = resulttv;
-                                                two_obj[1] = resulttv2;
-                                                two_obj[2] = resulttv3;
-                                                two_obj[3] = resulttv4;
-                                                two_obj[4] = resulttv5;
-                                                two_obj[5] = resulttv6;
-                                                two_obj[6] = resulttv7;
-                                                two_obj[7] = resulttv8;
-                                                two_obj[8] = resulttv9;
-                                                two_obj[9] = resulttv10;
-                                                two_obj[10] = resulttv11;
-                                                two_obj[11] = resulttv12;
-                                                two_obj[12] = resulttv13;
-                                                two_obj[13] = resulttv14;
-                                                two_obj[14] = resulttv15;
-                                                two_obj[15] = resulttv16;
-                                                two_obj[16] = resulttv17;
-                                                two_obj[17] = resulttv18;
-                                                two_obj[18] = resulttv19;
-                                                two_obj[19] = resulttv20;
-                                            TextView[] calorie_obj = new TextView[20];
-                                            calorie_obj[0] = calorie1;
-                                            calorie_obj[1] = calorie2;
-                                            calorie_obj[2] = calorie3;
-                                            calorie_obj[3] = calorie4;
-                                            calorie_obj[4] = calorie5;
-                                            calorie_obj[5] = calorie6;
-                                            calorie_obj[6] = calorie7;
-                                            calorie_obj[7] = calorie8;
-                                            calorie_obj[8] = calorie9;
-                                            calorie_obj[9] = calorie10;
-                                            calorie_obj[10] = calorie11;
-                                            calorie_obj[11] = calorie12;
-                                            calorie_obj[12] = calorie13;
-                                            calorie_obj[13] = calorie14;
-                                            calorie_obj[14] = calorie15;
-                                            calorie_obj[15] = calorie16;
-                                            calorie_obj[16] = calorie17;
-                                            calorie_obj[17] = calorie18;
-                                            calorie_obj[18] = calorie19;
-                                            calorie_obj[19] = calorie20;
 
-                                            TextView[] protien_obj = new TextView[20];
-                                            protien_obj[0] = protien1;
-                                            protien_obj[1] = protien2;
-                                            protien_obj[2] = protien3;
-                                            protien_obj[3] = protien4;
-                                            protien_obj[4] = protien5;
-                                            protien_obj[5] = protien6;
-                                            protien_obj[6] = protien7;
-                                            protien_obj[7] = protien8;
-                                            protien_obj[8] = protien9;
-                                            protien_obj[9] = protien10;
-                                            protien_obj[10] = protien11;
-                                            protien_obj[11] = protien12;
-                                            protien_obj[12] = protien13;
-                                            protien_obj[13] = protien14;
-                                            protien_obj[14] = protien15;
-                                            protien_obj[15] = protien16;
-                                            protien_obj[16] = protien17;
-                                            protien_obj[17] = protien18;
-                                            protien_obj[18] = protien19;
-                                            protien_obj[19] = protien20;
-
-                                            TextView[] fat_obj = new TextView[20];
-                                            fat_obj[0] = fat1;
-                                            fat_obj[1] = fat2;
-                                            fat_obj[2] = fat3;
-                                            fat_obj[3] = fat4;
-                                            fat_obj[4] = fat5;
-                                            fat_obj[5] = fat6;
-                                            fat_obj[6] = fat7;
-                                            fat_obj[7] = fat8;
-                                            fat_obj[8] = fat9;
-                                            fat_obj[9] = fat10;
-                                            fat_obj[10] = fat11;
-                                            fat_obj[11] = fat12;
-                                            fat_obj[12] = fat13;
-                                            fat_obj[13] = fat14;
-                                            fat_obj[14] = fat15;
-                                            fat_obj[15] = fat16;
-                                            fat_obj[16] = fat17;
-                                            fat_obj[17] = fat18;
-                                            fat_obj[18] = fat19;
-                                            fat_obj[19] = fat20;
-
-                                            TextView[] carbohydrates_obj = new TextView[20];
-                                            carbohydrates_obj[0] = carbohydrates1;
-                                            carbohydrates_obj[1] = carbohydrates2;
-                                            carbohydrates_obj[2] = carbohydrates3;
-                                            carbohydrates_obj[3] = carbohydrates4;
-                                            carbohydrates_obj[4] = carbohydrates5;
-                                            carbohydrates_obj[5] = carbohydrates6;
-                                            carbohydrates_obj[6] = carbohydrates7;
-                                            carbohydrates_obj[7] = carbohydrates8;
-                                            carbohydrates_obj[8] = carbohydrates9;
-                                            carbohydrates_obj[9] = carbohydrates10;
-                                            carbohydrates_obj[10] = carbohydrates11;
-                                            carbohydrates_obj[11] = carbohydrates12;
-                                            carbohydrates_obj[12] = carbohydrates13;
-                                            carbohydrates_obj[13] = carbohydrates14;
-                                            carbohydrates_obj[14] = carbohydrates15;
-                                            carbohydrates_obj[15] = carbohydrates16;
-                                            carbohydrates_obj[16] = carbohydrates17;
-                                            carbohydrates_obj[17] = carbohydrates18;
-                                            carbohydrates_obj[18] = carbohydrates19;
-                                            carbohydrates_obj[19] = carbohydrates20;*/
 
                                             Map<String, Integer> object = new HashMap<>();
                                             object.put("Indian bread", 0);
@@ -526,6 +391,29 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                             tableview.setHeaderBackgroundColor(Color.parseColor("#2ecc71"));
                                             tableview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                                             tableview.setPivotX(10);*/
+                                            progressBar = findViewById(R.id.progrssbar);
+                                            progress_percentage = findViewById(R.id.textView4);
+                                           /*progressBar = findViewById(R.id.progrssbar);
+                                            double total_calories_consume_till_now_in_one_daya_1 = 0;
+                                            try {
+                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                                    total_calories_consume_till_now_in_one_daya_1 = new ReadWriteFromFile(LocalDateTime.now()).readfiles(DetectorActivity.this);
+                                                }
+                                            } catch (IOException e) {
+                                                e.printStackTrace();
+                                            }
+                                            Log.d("Total_calories", String.valueOf(total_calories_consume_till_now_in_one_daya_1));
+
+
+                                            double max_calories_per_day_1 = 0;
+                                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                                max_calories_per_day_1 = new ReadWriteFromFile(LocalDateTime.now()).readmaximumcalories(DetectorActivity.this);
+                                            }
+                                            Log.d(",Max_calorie_Capacity", String.valueOf(max_calories_per_day_1));
+                                          //  progressBar = findViewById(R.id.progress_bar);
+                                            progressBar.setMax((int) max_calories_per_day_1);
+                                            progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya_1);*/
+                                            //setContentView(R.layout.tfe_od_camera_connection_fragment_tracking);
 
                                                 button = (Button) findViewById(R.id.button);
                                                 button.setOnClickListener(new View.OnClickListener() {
@@ -534,18 +422,30 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                         //takeScreenShot(croppedBitmap, "result");
                                                         //resulttv.setText("My_answer");
                                                         //resulttv.setText((String) y);
-                                                        for(int j = 0; j<results.size(); j++){
-                                                            String x = (String) results.get(j).toString();
-                                                            int i = 4;
-                                                            while(x.charAt(i)!=' ' || x.charAt(i + 1)!='('){
-                                                                i++;
+                                                        /*
+                                                        *
+                                                        * Check whether calorie capacity per day is 0 or not.
+                                                        * */
+                                                        double max_calories_per_day_2 = 0;
+                                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                                            max_calories_per_day_2 = new ReadWriteFromFile(LocalDateTime.now()).readmaximumcalories(DetectorActivity.this);
+                                                        }
+                                                        if(max_calories_per_day_2==0){
+                                                            Toast.makeText(DetectorActivity.this, "Please 1st enter your details", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                        else {
+                                                            for (int j = 0; j < results.size(); j++) {
+                                                                String x = (String) results.get(j).toString();
+                                                                int i = 4;
+                                                                while (x.charAt(i) != ' ' || x.charAt(i + 1) != '(') {
+                                                                    i++;
 
-                                                            }
-                                                            String y = (String) x.substring(4, i);
-                                                            int count = object.containsKey(y) ? object.get(y) : 0;
-                                                            object.put(y, count + 1);
-                                                            //String two_char = x.substring(1,3);
-                                                            //JSONObject jsonObject = new JSONObject();
+                                                                }
+                                                                String y = (String) x.substring(4, i);
+                                                                int count = object.containsKey(y) ? object.get(y) : 0;
+                                                                object.put(y, count + 1);
+                                                                //String two_char = x.substring(1,3);
+                                                                //JSONObject jsonObject = new JSONObject();
 
 
                                                             /*two_obj[j].setText((String) y);
@@ -555,86 +455,86 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                             carbohydrates_obj[j].setText(map.get(two_obj[j].getText())[3]);*/
 
 
-                                                        }
+                                                            }
 
-                                                        // Getting an iterator
-                                                        //Iterator object_Iterator = object.entrySet().iterator();
-                                                        int l = 0;
-                                                        for (Map.Entry<String, Integer> set :
-                                                                object.entrySet()) {
+                                                            // Getting an iterator
+                                                            //Iterator object_Iterator = object.entrySet().iterator();
+                                                            int l = 0;
+                                                            for (Map.Entry<String, Integer> set :
+                                                                    object.entrySet()) {
 
-                                                            // Printing all elements of a Map
+                                                                // Printing all elements of a Map
                                                             /*System.out.println(set.getKey() + " = "
                                                                     + set.getValue());*/
-                                                            if(set.getValue()!=0){
-                                                                //two_obj[l].setText((String) set.getKey() + " x" + (String) set.getValue().toString());
-                                                                data[l][0] = (String) set.getKey() + " x" + (String) set.getValue().toString();
+                                                                if (set.getValue() != 0) {
+                                                                    //two_obj[l].setText((String) set.getKey() + " x" + (String) set.getValue().toString());
+                                                                    data[l][0] = (String) set.getKey() + " x" + (String) set.getValue().toString();
 
-                                                              //calorie_obj[l].setText(String.format("%.2f", map.get(set.getKey())[0]* set.getValue()));
-                                                                data[l][1] = String.format("%.2f", map.get(set.getKey())[0]* set.getValue());
-                                                               // protien_obj[l].setText(String.format("%.2f", map.get(set.getKey())[1]* set.getValue()));
-                                                                data[l][2] = String.format("%.2f", map.get(set.getKey())[1]* set.getValue());
-                                                              // fat_obj[l].setText(String.format("%.2f", map.get(set.getKey())[2]* set.getValue()));
-                                                                data[l][3] = String.format("%.2f", map.get(set.getKey())[2]* set.getValue());
-                                                              // carbohydrates_obj[l].setText(String.format("%.2f", map.get(set.getKey())[3]* set.getValue()));
-                                                                data[l][4] = String.format("%.2f", map.get(set.getKey())[3]* set.getValue());
-                                                                l++;
-                                                                object.put(set.getKey(), 0);
+                                                                    //calorie_obj[l].setText(String.format("%.2f", map.get(set.getKey())[0]* set.getValue()));
+                                                                    data[l][1] = String.format("%.2f", map.get(set.getKey())[0] * set.getValue());
+                                                                    // protien_obj[l].setText(String.format("%.2f", map.get(set.getKey())[1]* set.getValue()));
+                                                                    data[l][2] = String.format("%.2f", map.get(set.getKey())[1] * set.getValue());
+                                                                    // fat_obj[l].setText(String.format("%.2f", map.get(set.getKey())[2]* set.getValue()));
+                                                                    data[l][3] = String.format("%.2f", map.get(set.getKey())[2] * set.getValue());
+                                                                    // carbohydrates_obj[l].setText(String.format("%.2f", map.get(set.getKey())[3]* set.getValue()));
+                                                                    data[l][4] = String.format("%.2f", map.get(set.getKey())[3] * set.getValue());
+                                                                    l++;
+                                                                    object.put(set.getKey(), 0);
+
+
+                                                                }
+
+
+                                                                //tableview.setDataAdapter(new SimpleTableDataAdapter(DetectorActivity.this, Newdata));
 
 
                                                             }
-
-
-                                                            //tableview.setDataAdapter(new SimpleTableDataAdapter(DetectorActivity.this, Newdata));
-
-
-                                                        }
-                                                        String[][] Newdata = new String[l][5];
-                                                        for(int i  = 0; i<l; i++){
-                                                            for(int j = 0; j<5; j++){
-                                                                Newdata[i][j] = data[i][j];
+                                                            String[][] Newdata = new String[l][5];
+                                                            for (int i = 0; i < l; i++) {
+                                                                for (int j = 0; j < 5; j++) {
+                                                                    Newdata[i][j] = data[i][j];
+                                                                }
                                                             }
-                                                        }
 
-                                                        /*
-                                                        * Here In the Below code We are creating the recyclerview
-                                                        * Which is usefull to show the answer of table in the table view.
-                                                        * Two classes has been created for it 1st one is DataModel and 2nd one is DataAdapter.
-                                                        *
-                                                        * */
+                                                            /*
+                                                             * Here In the Below code We are creating the recyclerview
+                                                             * Which is usefull to show the answer of table in the table view.
+                                                             * Two classes has been created for it 1st one is DataModel and 2nd one is DataAdapter.
+                                                             *
+                                                             * */
 
-                                                        recyclerView.setHasFixedSize(true);
-                                                        recyclerView.setLayoutManager(new LinearLayoutManager(DetectorActivity.this));
-                                                        List<DataModel> dataModelList = new ArrayList<>();
-                                                        int Number_of_columns = 5;
-                                                        int Number_of_rows = l;
-                                                        for(int i = 0; i<Number_of_rows; i++){
-                                                            String[] dataarray = new String[Number_of_columns];
-                                                            for(int j = 0; j<Number_of_columns; j++){
-                                                                dataarray[j] = Newdata[i][j];
+                                                            recyclerView.setHasFixedSize(true);
+                                                            recyclerView.setLayoutManager(new LinearLayoutManager(DetectorActivity.this));
+                                                            List<DataModel> dataModelList = new ArrayList<>();
+                                                            int Number_of_columns = 5;
+                                                            int Number_of_rows = l;
+                                                            for (int i = 0; i < Number_of_rows; i++) {
+                                                                String[] dataarray = new String[Number_of_columns];
+                                                                for (int j = 0; j < Number_of_columns; j++) {
+                                                                    dataarray[j] = Newdata[i][j];
+                                                                }
+                                                                DataModel mydatamodel = new DataModel(dataarray);
+                                                                dataModelList.add(mydatamodel);
                                                             }
-                                                            DataModel mydatamodel = new DataModel(dataarray);
-                                                            dataModelList.add(mydatamodel);
-                                                        }
-                                                        dataAdapter = new DataAdapter(DetectorActivity.this, dataModelList);
-                                                        recyclerView.setAdapter(dataAdapter);
+                                                            dataAdapter = new DataAdapter(DetectorActivity.this, dataModelList);
+                                                            recyclerView.setAdapter(dataAdapter);
 
-                                                        /*
-                                                        * Here in the below code we are taking the screenshort.
-                                                        * The screenshort function is build inside the fragment.
-                                                        * If you want to see how the function works please see the fragment name as "Cameraconnection Fragment"
-                                                        *
-                                                        * */
+                                                            /*
+                                                             * Here in the below code we are taking the screenshort.
+                                                             * The screenshort function is build inside the fragment.
+                                                             * If you want to see how the function works please see the fragment name as "Cameraconnection Fragment"
+                                                             *
+                                                             * */
 
-                                                        CameraConnectionFragment fragment = (CameraConnectionFragment) getFragmentManager().findFragmentById(R.id.container);
-                                                        fragment.takescreenshort(view);
-                                                        //fragment.setRecycleerView(Newdata, l);
-                                                        //fragment.takescreenshort(view);
-                                                        //fragment.takescreenshort(view);
+                                                            CameraConnectionFragment fragment = (CameraConnectionFragment) getFragmentManager().findFragmentById(R.id.container);
+                                                            fragment.takescreenshort(view);
+                                                            //fragment.setRecycleerView(Newdata, l);
+                                                            //fragment.takescreenshort(view);
+                                                            //fragment.takescreenshort(view);
                                                         /*CameraConnectionFragment fragment = (CameraConnectionFragment) getFragmentManager().findFragmentById(R.id.container);
                                                         fragment.takePicture();*/
 
-                                                       /* takeScreenShot(getWindow().getDecorView().getRootView(), "result");*/
+                                                            /* takeScreenShot(getWindow().getDecorView().getRootView(), "result");*/
 
                                                         /*table.setColumnCollapsed(0, table_flag);
                                                         table.setColumnCollapsed(1, table_flag);
@@ -668,8 +568,55 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                             e.printStackTrace();
                                                         }*/
 
+                                                            /*
+                                                             * Here in the below code we are calculating the total calories of all the food detect in the one photo.
+                                                             * Here we are storing the total calories in the "mycalorie" variable.
+                                                             * After that we are calling the "RunningThread" class in which we have build the function name as "writeToFile()"
+                                                             * By calling this function here we are storing the total calories in one photo in Data-formate.txt file.
 
+                                                             * */
+
+                                                            double mycalorie = 0;
+                                                            for (int d = 0; d < l; d++) {
+                                                                mycalorie = mycalorie + Double.parseDouble(Newdata[d][1]);
+                                                            }
+                                                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                                                new ReadWriteFromFile(LocalDateTime.now()).writeToFile(String.valueOf(mycalorie), DetectorActivity.this);
+
+                                                            }
+                                                            /*
+                                                             * Here in the below code we are just calculating today's calories consume till now.
+                                                             * And the value of the total calories is storing in the variable name as "total_calories_consume_till_now_in_one_daya".
+                                                             * To read more about the Function of the code please visit to the file name as "ReadWriteFromFile".
+                                                             *
+                                                             * */
+                                                            double total_calories_consume_till_now_in_one_daya = 0;
+                                                            try {
+                                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                                                    total_calories_consume_till_now_in_one_daya = new ReadWriteFromFile(LocalDateTime.now()).readfiles(DetectorActivity.this);
+                                                                }
+                                                            } catch (IOException e) {
+                                                                e.printStackTrace();
+                                                            }
+                                                            Log.d("Total_calories", String.valueOf(total_calories_consume_till_now_in_one_daya));
+                                                            /*
+                                                             * Here in the below code we are getting the maximum capacity of a person per day.(In form of calories)
+                                                             * */
+                                                            double max_calories_per_day = 0;
+                                                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                                                max_calories_per_day = new ReadWriteFromFile(LocalDateTime.now()).readmaximumcalories(DetectorActivity.this);
+                                                            }
+                                                            Log.d(",Max_calorie_Capacity", String.valueOf(max_calories_per_day));
+                                                            /*
+                                                             *
+                                                             * */
+                                                            progressBar.setMax((int) max_calories_per_day);
+                                                            progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya);
+                                                            progress_percentage.setText(String.valueOf(total_calories_consume_till_now_in_one_daya) + " Kcal");
+
+                                                        }
                                                     }
+
                                                 });
 
 

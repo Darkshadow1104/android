@@ -43,9 +43,36 @@
             android:background="@color/tfe_semi_transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.964">
+            app:layout_constraintVertical_bias="0.968">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="78dp"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/button"
+                app:layout_constraintEnd_toEndOf="@+id/edit_button"
+                app:layout_constraintHorizontal_bias="0.525"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progrssbar"
+                app:layout_constraintVertical_bias="0.203" />
+
+            <ProgressBar
+                android:id="@+id/progrssbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="407dp"
+                android:layout_height="38dp"
+                android:progressDrawable="@drawable/coustom_progress_bg"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/edit_button"
@@ -90,8 +117,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.717" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
