@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class TakingInputFromUser extends AppCompatActivity {
-
+    public TextView maxcalories;
     public EditText height;
     public EditText weight, age;
     public double main_BMR;
@@ -158,6 +158,8 @@ public class TakingInputFromUser extends AppCompatActivity {
                     /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         new RunningThread(LocalDateTime.now()).writeToFile(String.valueOf(mycalorie), TakingInputFromUser.this);
                     }*/
+                    Toast.makeText(TakingInputFromUser.this, "Data saved", Toast.LENGTH_SHORT).show();
+
 
                 }
 

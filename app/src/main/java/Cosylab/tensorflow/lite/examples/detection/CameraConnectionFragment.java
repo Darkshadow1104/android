@@ -120,6 +120,7 @@ public class CameraConnectionFragment extends Fragment {
   protected Animation fabOpen, fabClose, rotateForward, rotateBackward;
   protected boolean isOpen = false;
   private static final int MINIMUM_PREVIEW_SIZE = 320;
+  protected TextView maxcalories;
 
   /** Conversion from screen rotation to JPEG orientation. */
   private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
@@ -397,6 +398,7 @@ public class CameraConnectionFragment extends Fragment {
     * */
     progressBar = view.findViewById(R.id.progrssbar);
     progress_percentage = view.findViewById(R.id.textView4);
+    maxcalories = view.findViewById(R.id.textView6);
     double total_calories_consume_till_now_in_one_daya_1 = 0;
     try {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -416,6 +418,7 @@ public class CameraConnectionFragment extends Fragment {
     //  progressBar = findViewById(R.id.progress_bar);
     progressBar.setMax((int) max_calories_per_day_1);
     progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya_1);
+    maxcalories.setText(String.valueOf(max_calories_per_day_1) + " Kcal");
     return view;
   }
 
