@@ -392,8 +392,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                             tableview.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                                             tableview.setPivotX(10);*/
                                             progressBar = findViewById(R.id.progrssbar);
-                                            progressBar2 = findViewById(R.id.progrssbar1);
-                                            progressBar3 = findViewById(R.id.progrssbar2);
+                                            /*progressBar2 = findViewById(R.id.progrssbar1);
+                                            progressBar3 = findViewById(R.id.progrssbar2);*/
                                             progress_percentage = findViewById(R.id.textView4);
                                            /*progressBar = findViewById(R.id.progrssbar);
                                             double total_calories_consume_till_now_in_one_daya_1 = 0;
@@ -615,7 +615,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                             /*progressBar.setMax((int) max_calories_per_day);
                                                             progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya);*/
                                                             progress_percentage.setText(String.valueOf(total_calories_consume_till_now_in_one_daya) + " Kcal");
-                                                            double greencolor = (max_calories_per_day * 33 )/100;
+                                                            /*double greencolor = (max_calories_per_day * 33 )/100;
                                                             double orangecolor = (max_calories_per_day * 66 )/100;
                                                             double Redcolor = (max_calories_per_day * 100 )/100;
                                                             progressBar.setMax((int) greencolor);
@@ -632,7 +632,9 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                                                                 progressBar.setProgress((int) greencolor);
                                                                 progressBar2.setProgress((int) orangecolor);
                                                                 progressBar3.setProgress((int) total_calories_consume_till_now_in_one_daya);
-                                                            }
+                                                            }*/
+                                                            progressBar.setMax((int) max_calories_per_day);
+                                                            progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya);
 
                                                         }
                                                     }

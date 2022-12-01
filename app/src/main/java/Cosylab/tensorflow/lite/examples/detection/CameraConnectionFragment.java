@@ -401,8 +401,8 @@ public class CameraConnectionFragment extends Fragment {
     * */
 
     progressBar = view.findViewById(R.id.progrssbar);
-    progressBar2 = view.findViewById(R.id.progrssbar1);
-    progressBar3 = view.findViewById(R.id.progrssbar2);
+    /*progressBar2 = view.findViewById(R.id.progrssbar1);
+    progressBar3 = view.findViewById(R.id.progrssbar2);*/
     progress_percentage = view.findViewById(R.id.textView4);
     maxcalories = view.findViewById(R.id.textView6);
     double total_calories_consume_till_now_in_one_daya_1 = 0;
@@ -423,7 +423,7 @@ public class CameraConnectionFragment extends Fragment {
     Log.d(",Max_calorie_Capacity", String.valueOf(max_calories_per_day_1));
     //  progressBar = findViewById(R.id.progress_bar);
     //caluclate the 33% for each color (green , orange and red)
-    double greencolor = (max_calories_per_day_1 * 33 )/100;
+    /*double greencolor = (max_calories_per_day_1 * 33 )/100;
     double orangecolor = (max_calories_per_day_1 * 66 )/100;
     double Redcolor = (max_calories_per_day_1 * 100 )/100;
     progressBar.setMax((int) greencolor);
@@ -440,9 +440,12 @@ public class CameraConnectionFragment extends Fragment {
       progressBar.setProgress((int) greencolor);
       progressBar2.setProgress((int) orangecolor);
       progressBar3.setProgress((int) total_calories_consume_till_now_in_one_daya_1);
-    }
+    }*/
+    progressBar.setMax((int) max_calories_per_day_1);
+    progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya_1);
 
     maxcalories.setText(String.valueOf(max_calories_per_day_1) + " Kcal");
+
     /*String strtext = getArguments().getString("edttext");
     maxcalories.setText(strtext);*/
     //return inflater.inflate(R.layout.tfe_od_camera_connection_fragment_tracking, container, false);
