@@ -23,9 +23,6 @@ import android.util.Log;
 
 import org.tensorflow.lite.Interpreter;
 import org.tensorflow.lite.Tensor;
-import Cosylab.tensorflow.lite.examples.detection.MainActivity;
-import Cosylab.tensorflow.lite.examples.detection.env.Logger;
-import Cosylab.tensorflow.lite.examples.detection.env.Utils;
 import org.tensorflow.lite.gpu.GpuDelegate;
 import org.tensorflow.lite.nnapi.NnApiDelegate;
 
@@ -42,6 +39,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Vector;
+
+import Cosylab.tensorflow.lite.examples.detection.MainActivity;
+import Cosylab.tensorflow.lite.examples.detection.env.Logger;
+import Cosylab.tensorflow.lite.examples.detection.env.Utils;
 
 
 /**

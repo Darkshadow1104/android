@@ -93,7 +93,7 @@ public abstract class CameraActivity extends AppCompatActivity
   private static final int PERMISSIONS_REQUEST = 1;
   protected int currentprogress = 0;
   protected TextView progress_percentage;
-  protected ProgressBar progressBar;
+  protected ProgressBar progressBar, progressBar2, progressBar3;
   protected RecyclerView recyclerView;
   protected DataAdapter dataAdapter;
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;

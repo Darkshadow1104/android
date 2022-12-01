@@ -8,10 +8,17 @@
 </shape>
 </item>
 <item android:id="@+id/progress_progress">
-    <scale android:scaleWidth="100%">
+    <scale android:scaleWidth="33%">
         <shape android:shape="rectangle">
             <corners android:radius="6dp"/>
-            <solid android:color="@color/colorGreen"></solid>
+            <!--<gradient
+                android:angle="45"
+                android:startColor="@color/colorGreen"
+                android:centerColor="@android:color/holo_orange_dark"
+                android:endColor="@android:color/holo_red_dark"
+                >
+            </gradient>-->
+            <solid android:color="#20A79C"></solid>
         </shape>
     </scale>
 </item>

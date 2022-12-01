@@ -3,6 +3,7 @@ package Cosylab.tensorflow.lite.examples.detection;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -159,8 +160,15 @@ public class TakingInputFromUser extends AppCompatActivity {
                         new RunningThread(LocalDateTime.now()).writeToFile(String.valueOf(mycalorie), TakingInputFromUser.this);
                     }*/
                     Toast.makeText(TakingInputFromUser.this, "Data saved", Toast.LENGTH_SHORT).show();
-
-
+                    /*Intent intent = new Intent();
+                    intent.putExtra("editTextValue", mycalorie);
+                    setResult(RESULT_OK, intent);
+                    finish();*/
+                    /*Bundle bundle = new Bundle();
+                    bundle.putString("edttext", String.valueOf(mycalorie));*/
+// set Fragmentclass Arguments
+                    //CameraConnectionFragment fragobj = new CameraConnectionFragment();
+                    //fragobj.setArguments(bundle);
                 }
 
 

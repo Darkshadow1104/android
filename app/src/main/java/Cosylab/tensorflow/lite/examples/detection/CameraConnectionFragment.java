@@ -16,6 +16,7 @@
 
 package Cosylab.tensorflow.lite.examples.detection;
 
+import static android.app.Activity.RESULT_OK;
 import static android.view.View.getDefaultSize;
 import static androidx.constraintlayout.widget.Constraints.TAG;
 /*import androidx.fragment.app.FragmentManager;
@@ -110,7 +111,7 @@ public class CameraConnectionFragment extends Fragment {
   private static final Logger LOGGER = new Logger();
   protected RecyclerView recyclerView;
   protected DataAdapter dataAdapter;
-  protected ProgressBar progressBar;
+  protected ProgressBar progressBar, progressBar2, progressBar3;
   protected TextView progress_percentage;
   /**
    * The camera preview size will be chosen to be the smallest frame by pixel size capable of
@@ -245,11 +246,11 @@ public class CameraConnectionFragment extends Fragment {
         public void onSurfaceTextureUpdated(final SurfaceTexture texture) {}
       };
 
-  private CameraConnectionFragment(
-      final ConnectionCallback connectionCallback,
-      final OnImageAvailableListener imageListener,
-      final int layout,
-      final Size inputSize) {
+  public CameraConnectionFragment(
+          final ConnectionCallback connectionCallback,
+          final OnImageAvailableListener imageListener,
+          final int layout,
+          final Size inputSize) {
     this.cameraConnectionCallback = connectionCallback;
     this.imageListener = imageListener;
     this.layout = layout;
@@ -379,7 +380,9 @@ public class CameraConnectionFragment extends Fragment {
             fm.replace(R.id.constraintLayout,secondfreg).commit();*/
           Intent intent = new Intent(getActivity(), TakingInputFromUser.class);
           intent.putExtra("Some_value", "1");
-          startActivity(intent);
+          startActivityForResult(intent, 1);
+
+
         }
         else{
           floatingActionButton.startAnimation(rotateBackward);
@@ -396,7 +399,10 @@ public class CameraConnectionFragment extends Fragment {
     *
     *
     * */
+
     progressBar = view.findViewById(R.id.progrssbar);
+    progressBar2 = view.findViewById(R.id.progrssbar1);
+    progressBar3 = view.findViewById(R.id.progrssbar2);
     progress_percentage = view.findViewById(R.id.textView4);
     maxcalories = view.findViewById(R.id.textView6);
     double total_calories_consume_till_now_in_one_daya_1 = 0;
@@ -416,11 +422,44 @@ public class CameraConnectionFragment extends Fragment {
     }
     Log.d(",Max_calorie_Capacity", String.valueOf(max_calories_per_day_1));
     //  progressBar = findViewById(R.id.progress_bar);
-    progressBar.setMax((int) max_calories_per_day_1);
-    progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya_1);
+    //caluclate the 33% for each color (green , orange and red)
+    double greencolor = (max_calories_per_day_1 * 33 )/100;
+    double orangecolor = (max_calories_per_day_1 * 66 )/100;
+    double Redcolor = (max_calories_per_day_1 * 100 )/100;
+    progressBar.setMax((int) greencolor);
+    progressBar2.setMax((int) orangecolor);
+    progressBar3.setMax((int) Redcolor);
+    if(total_calories_consume_till_now_in_one_daya_1<=greencolor){
+      progressBar.setProgress((int) total_calories_consume_till_now_in_one_daya_1);
+    }
+    else if(total_calories_consume_till_now_in_one_daya_1>greencolor && total_calories_consume_till_now_in_one_daya_1<=orangecolor){
+      progressBar.setProgress((int) greencolor);
+      progressBar2.setProgress((int) total_calories_consume_till_now_in_one_daya_1);
+    }
+    else if(total_calories_consume_till_now_in_one_daya_1>orangecolor  && total_calories_consume_till_now_in_one_daya_1<=Redcolor){
+      progressBar.setProgress((int) greencolor);
+      progressBar2.setProgress((int) orangecolor);
+      progressBar3.setProgress((int) total_calories_consume_till_now_in_one_daya_1);
+    }
+
     maxcalories.setText(String.valueOf(max_calories_per_day_1) + " Kcal");
+    /*String strtext = getArguments().getString("edttext");
+    maxcalories.setText(strtext);*/
+    //return inflater.inflate(R.layout.tfe_od_camera_connection_fragment_tracking, container, false);
     return view;
   }
+  /*public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    String strEditText = "0";
+    if (requestCode == 1) {
+      if(resultCode == RESULT_OK) {
+        strEditText = data.getStringExtra("editTextValue");
+      }
+    }
+    //String strEditText = data.getStringExtra("editTextValue");
+
+    maxcalories.setText(strEditText);
+  }*/
 
   @Override
   public void onViewCreated(final View view, final Bundle savedInstanceState) {
@@ -446,6 +485,7 @@ public class CameraConnectionFragment extends Fragment {
     } else {
       textureView.setSurfaceTextureListener(surfaceTextureListener);
     }
+
   }
 
   @Override
@@ -906,5 +946,6 @@ public class CameraConnectionFragment extends Fragment {
 
     return datamodel_list;
   }
+
 
 }
