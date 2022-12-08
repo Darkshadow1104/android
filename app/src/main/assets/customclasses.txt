@@ -1,4 +1,4 @@
-Indian bread
+Indianbread
 Rasgulla
 Biryani
 Uttapam
@@ -6,15 +6,56 @@ Paneer
 Poha
 Khichdi
 Omelette
-Plain rice
-Dal makhani
+Plainrice
+Dalmakhani
 Rajma
 Poori
 Chole
 Dal
 Sambhar
 Papad
-Gulab jamun
+Gulabjamun
 Idli
 Vada
 Dosa
+Jalebi
+Samosa
+Paobhaji
+Dhokla
+Barfi
+Fishcurry
+Momos
+Kheer
+Kachori
+Vadapav
+Rasmalai
+Kalachana
+Chaat
+Saag
+Dumaloo
+Thupka
+Khandvi
+Kabab
+Thepla
+Rasam
+Appam
+Gatte
+Kadhipakora
+Ghewar
+Aloomatter
+Prawns
+Sandwich
+Dahipuri
+Haleem
+Mutton
+Aloogobi
+Eggbhurji
+Lemonrice
+Bhindimasala
+Matarmushroom
+Gajarkahalwa
+Motichoorladoo
+Ragiroti
+Chickentikka
+Tandoorichicken
+Lauki

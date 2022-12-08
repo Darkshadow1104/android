@@ -1,12 +1,7 @@
 package Cosylab.tensorflow.lite.examples.detection;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,10 +12,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.tensorflow.lite.examples.detection.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+
+import org.tensorflow.lite.examples.detection.R;
 
 public class TakingInputFromUser extends AppCompatActivity {
     public TextView maxcalories;
