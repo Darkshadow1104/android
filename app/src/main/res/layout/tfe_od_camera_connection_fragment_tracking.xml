@@ -53,8 +53,8 @@
                 android:layout_width="98dp"
                 android:layout_height="34dp"
                 android:layout_marginBottom="72dp"
-                android:textColor="@color/white"
                 android:gravity="center"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/add_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.843"
@@ -67,9 +67,9 @@
                 android:layout_width="63dp"
                 android:layout_height="33dp"
                 android:layout_marginEnd="84dp"
-                android:textColor="@color/white"
-                android:text = "0.0 Kcal"
                 android:gravity="center_vertical"
+                android:text="0.0 Kcal"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/textView4"
                 app:layout_constraintStart_toStartOf="parent"
@@ -143,6 +143,23 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.717" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/graph_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="48dp"
+                android:clickable="true"
+                android:src="@drawable/bar_graph"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/add_button"
+                app:layout_constraintHorizontal_bias="0.916"
+                android:focusable="true"
+                android:backgroundTint="@color/colorGreen"
+                android:tint="@color/white"
+                android:visibility="invisible"
+                app:layout_constraintStart_toEndOf="@+id/button" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

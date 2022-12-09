@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ReadWriteFromFile {
@@ -141,4 +142,34 @@ public class ReadWriteFromFile {
         return maxcalories;
     }
 
-}
+    public ArrayList<Double> getthevaluesforgraph(Context context) throws IOException {
+        ArrayList<Double> arr= new ArrayList<>();
+        File d = context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS);
+        File fileslist[] = d.listFiles();
+        for (File file:fileslist){
+            String filename = file.getName();
+            if(filename.equals("maximumcalories.txt")) {
+               continue;
+           }
+               else{
+                double myans = 0;
+                String input = "";
+                FileReader reader = new FileReader(file);
+                char[] array = new char[8];
+                reader.read(array);
+                array[7] = '\0';
+                for(int j = 0; j<array.length - 1; j++){
+                    input = input + array[j];
+                }
+                double ans = Double.parseDouble(input);
+                myans = myans + ans;
+                arr.add(myans);
+               }
+           }
+        return arr;
+        }
+
+
+
+    }
+

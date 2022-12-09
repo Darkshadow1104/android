@@ -34,11 +34,21 @@
         tools:node="merge"
         tools:replace="android:label">
         <activity
-            android:name="Cosylab.tensorflow.lite.examples.detection.TakingInputFromUser"
+            android:name="Cosylab.tensorflow.lite.examples.detection.GraphActivity"
             android:exported="false">
             <!--<meta-data
                 android:name="android.app.lib_name"
-                android:value="" />-->
+                android:value=""--> />
+        </activity>
+        <activity
+            android:name="Cosylab.tensorflow.lite.examples.detection.TakingInputFromUser"
+            android:exported="false">
+
+            <!--
+                <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+            -->
         </activity>
         <!--
         <activity

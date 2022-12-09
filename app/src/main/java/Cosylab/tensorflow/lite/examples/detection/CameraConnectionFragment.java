@@ -117,7 +117,7 @@ public class CameraConnectionFragment extends Fragment {
    * The camera preview size will be chosen to be the smallest frame by pixel size capable of
    * containing a DESIRED_SIZE x DESIRED_SIZE square.
    */
-  protected FloatingActionButton floatingActionButton, floatingActionButton2;
+  protected FloatingActionButton floatingActionButton, floatingActionButton2, floatingActionButton3;
   protected Animation fabOpen, fabClose, rotateForward, rotateBackward;
   protected boolean isOpen = false;
   private static final int MINIMUM_PREVIEW_SIZE = 320;
@@ -341,7 +341,7 @@ public class CameraConnectionFragment extends Fragment {
     ///////////////////////////////////// Somthing ned to do/////////////////////////////
     floatingActionButton = (FloatingActionButton) view.findViewById(R.id.add_button);
     floatingActionButton2 = (FloatingActionButton) view.findViewById(R.id.edit_button);
-
+    floatingActionButton3 = (FloatingActionButton) view.findViewById(R.id.graph_button);
     fabOpen = AnimationUtils.loadAnimation(getActivity(), R.anim.fab_open);
     fabClose = AnimationUtils.loadAnimation(getActivity(), R.anim.fab_close);
     rotateForward = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_backword);
@@ -349,17 +349,21 @@ public class CameraConnectionFragment extends Fragment {
     floatingActionButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Toast.makeText(getActivity(), "Add Button Clicked", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), "Add Button Clicked", Toast.LENGTH_SHORT).show();
         if(isOpen){
           floatingActionButton.startAnimation(rotateForward);
           floatingActionButton2.startAnimation(fabClose);
+          floatingActionButton3.startAnimation(fabClose);
           floatingActionButton2.setClickable(false);
+          floatingActionButton3.setClickable(false);
           isOpen = false;
         }
         else{
           floatingActionButton.startAnimation(rotateBackward);
           floatingActionButton2.startAnimation(fabOpen);
           floatingActionButton2.setClickable(true);
+          floatingActionButton3.startAnimation(fabOpen);
+          floatingActionButton3.setClickable(true);
           isOpen = true;
 
         }
@@ -373,6 +377,8 @@ public class CameraConnectionFragment extends Fragment {
           floatingActionButton.startAnimation(rotateForward);
           floatingActionButton2.startAnimation(fabClose);
           floatingActionButton2.setClickable(false);
+          floatingActionButton3.startAnimation(fabClose);
+          floatingActionButton3.setClickable(false);
           isOpen = false;
             /*Fragment2 secondfreg = new Fragment2();
           //FragmentTransaction fm = getFragmentManager().beginTransaction();
@@ -392,9 +398,41 @@ public class CameraConnectionFragment extends Fragment {
 
         }
         //Here we need to add the edit text filed to get the input from the user.
-        Toast.makeText(getActivity(), "Edit_text clicked", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), "Edit_text clicked", Toast.LENGTH_SHORT).show();
       }
     });
+
+    floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if(isOpen){
+          floatingActionButton.startAnimation(rotateForward);
+          floatingActionButton3.startAnimation(fabClose);
+          floatingActionButton3.setClickable(false);
+          isOpen = false;
+            /*Fragment2 secondfreg = new Fragment2();
+          //FragmentTransaction fm = getFragmentManager().beginTransaction();
+          FragmentTransaction fm = getChildFragmentManager().beginTransaction();
+            fm.replace(R.id.constraintLayout,secondfreg).commit();*//*
+          Intent intent = new Intent(getActivity(), TakingInputFromUser.class);
+          intent.putExtra("Some_value", "1");
+          startActivityForResult(intent, 1);*/
+
+          Intent intent = new Intent(getActivity(), GraphActivity.class);
+          startActivityForResult(intent, 2);
+
+
+        }
+        else{
+          floatingActionButton.startAnimation(rotateBackward);
+          floatingActionButton3.startAnimation(fabOpen);
+          floatingActionButton3.setClickable(true);
+          isOpen = true;
+
+        }
+      }
+    });
+
     /*
     *
     *

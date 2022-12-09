@@ -16,20 +16,20 @@
         <item>pound</item>
     </string-array>
     <string-array name="Height_units">
-       <item>cm</item>
+        <item>cm</item>
         <item>inch</item>
     </string-array>
     <string-array name="Sex_units">
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <string-array name = "Activity">
-    <item>No exercise</item>
-    <item>Lightly active</item>
-    <item>Moderately active</item>
-    <item>Very active</item>
-    <item>Extra active</item>
-</string-array>
+    <string-array name="Activity">
+        <item>No exercise</item>
+        <item>Lightly active</item>
+        <item>Moderately active</item>
+        <item>Very active</item>
+        <item>Extra active</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
