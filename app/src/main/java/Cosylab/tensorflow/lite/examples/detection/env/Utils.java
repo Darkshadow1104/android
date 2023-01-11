@@ -20,9 +20,7 @@ import java.nio.channels.FileChannel;
 
 public class Utils {
 
-    /**
-     * Memory-map the model file in Assets.
-     */
+   
     public static MappedByteBuffer loadModelFile(AssetManager assets, String modelFilename)
             throws IOException {
         AssetFileDescriptor fileDescriptor = assets.openFd(modelFilename);
@@ -86,20 +84,7 @@ public class Utils {
         return bitmap;
     }
 
-    /**
-     * Returns a transformation matrix from one reference frame into another.
-     * Handles cropping (if maintaining aspect ratio is desired) and rotation.
-     *
-     * @param srcWidth Width of source frame.
-     * @param srcHeight Height of source frame.
-     * @param dstWidth Width of destination frame.
-     * @param dstHeight Height of destination frame.
-     * @param applyRotation Amount of rotation to apply from one frame to another.
-     *  Must be a multiple of 90.
-     * @param maintainAspectRatio If true, will ensure that scaling in x and y remains constant,
-     * cropping the image if necessary.
-     * @return The transformation fulfilling the desired requirements.
-     */
+   
     public static Matrix getTransformationMatrix(
             final int srcWidth,
             final int srcHeight,
@@ -117,8 +102,7 @@ public class Utils {
             matrix.postRotate(applyRotation);
         }
 
-        // Account for the already applied rotation, if any, and then determine how
-        // much scaling is needed for each axis.
+        
         final boolean transpose = (Math.abs(applyRotation) + 90) % 180 == 0;
 
         final int inWidth = transpose ? srcHeight : srcWidth;
