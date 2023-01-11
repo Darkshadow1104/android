@@ -33,25 +33,10 @@ import java.util.Vector;
 import static Cosylab.tensorflow.lite.examples.detection.env.Utils.expit;
 
 
-/**
- * Wrapper for frozen detection models trained using the Tensorflow Object Detection API:
- * - https://github.com/tensorflow/models/tree/master/research/object_detection
- * where you can find the training code.
- * <p>
- * To use pretrained models in the API or convert to TF Lite models, please see docs for details:
- * - https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
- * - https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_on_mobile_tensorflowlite.md#running-our-model-on-android
- */
+
 public class YoloV5ClassifierDetect implements Classifier {
 
-    /**
-     * Initializes a native TensorFlow session for classifying images.
-     *
-     * @param assetManager  The asset manager to be used to load assets.
-     * @param modelFilename The filepath of the model GraphDef protocol buffer.
-     * @param labelFilename The filepath of label file for classes.
-     * @param isQuantized   Boolean representing model is quantized or not
-     */
+  
     public static YoloV5ClassifierDetect create(
             final AssetManager assetManager,
             final String modelFilename,
