@@ -7,9 +7,7 @@ import android.graphics.RectF;
 
 import java.util.List;
 
-/**
- * Generic interface for interacting with different recognition engines.
- */
+
 public interface Classifier {
     List<Recognition> recognizeImage(Bitmap bitmap);
 
@@ -25,29 +23,18 @@ public interface Classifier {
 
     abstract float getObjThresh();
 
-    /**
-     * An immutable result returned by a Classifier describing what was recognized.
-     */
+    
     public class Recognition {
-        /**
-         * A unique identifier for what has been recognized. Specific to the class, not the instance of
-         * the object.
-         */
+     
         private final String id;
 
-        /**
-         * Display name for the recognition.
-         */
+      
         private final String title;
 
-        /**
-         * A sortable score for how good the recognition is relative to others. Higher should be better.
-         */
+       
         private final Float confidence;
 
-        /**
-         * Optional location within the source image for the location of the recognized object.
-         */
+       
         private RectF location;
 
         private int detectedClass;
