@@ -22,7 +22,7 @@ import Cosylab.tensorflow.lite.examples.detection.env.ImageUtils;
 import Cosylab.tensorflow.lite.examples.detection.env.Logger;
 import Cosylab.tensorflow.lite.examples.detection.tflite.Classifier;
 
-/** A tracker that handles non-max suppression and matches existing objects to new detections. */
+
 public class MultiBoxTracker {
   private static final float TEXT_SIZE_DIP = 18;
   private static final float MIN_SIZE = 16.0f;
