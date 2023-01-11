@@ -99,10 +99,7 @@ public class CameraConnectionFragment extends Fragment {
   protected DataAdapter dataAdapter;
   protected ProgressBar progressBar, progressBar2, progressBar3;
   protected TextView progress_percentage;
-  /**
-   * The camera preview size will be chosen to be the smallest frame by pixel size capable of
-   * containing a DESIRED_SIZE x DESIRED_SIZE square.
-   */
+ 
   protected FloatingActionButton floatingActionButton, floatingActionButton2, floatingActionButton3;
   protected Animation fabOpen, fabClose, rotateForward, rotateBackward;
   protected boolean isOpen = false;
@@ -243,15 +240,7 @@ public class CameraConnectionFragment extends Fragment {
     this.inputSize = inputSize;
   }
 
-  /**
-   * Given {@code choices} of {@code Size}s supported by a camera, chooses the smallest one whose
-   * width and height are at least as large as the minimum of both, or an exact match if possible.
-   *
-   * @param choices The list of sizes that the camera supports for the intended output class
-   * @param width The minimum desired width
-   * @param height The minimum desired height
-   * @return The optimal {@code Size}, or an arbitrary one if none were big enough
-   */
+ 
   protected static Size chooseOptimalSize(final Size[] choices, final int width, final int height) {
     final int minSize = Math.max(Math.min(width, height), MINIMUM_PREVIEW_SIZE);
     final Size desiredSize = new Size(width, height);
